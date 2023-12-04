@@ -1,6 +1,6 @@
 ---
-permalink: /markdown/
-title: "Markdown"
+permalink: genetic_algo
+title: "Genetic algorithm"
 author_profile: true
 redirect_from: 
   - /md/
