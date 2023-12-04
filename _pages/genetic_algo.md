@@ -1,10 +1,9 @@
 ---
-permalink: genetic_algo
+permalink: /genetic_algo
 title: "Genetic algorithm"
 author_profile: true
 redirect_from: 
-  - /md/
-  - /markdown.html
+  - /talks/
 ---
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
