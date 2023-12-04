@@ -17,7 +17,7 @@ Thus, the agent must be familiar with cooperative social interactions and natura
 Also it must build intuitive core knowledge about physics of our world, as this intuition is crucial to researchers to tackle difficult problems.
 
 ## How we do it
-We consider a population of 100 or less agents immersed in the Minecraft world  [link](https://minecraft.wiki/).
+We consider a population of 100 or less agents immersed in the Minecraft world  [Minecraft](https://minecraft.wiki/).
 Embedded intelligence has a lot of advantages:
 
 * more suited to develop intuitive knowledge about physics
