@@ -27,7 +27,17 @@ Embedded intelligence has a lot of advantages:
 Each agent has a physical body and a neural network.
 This network takes sensory information as input and returns motor commands as outputs.
 
-These commands can affect their body
+There are two types of sensory information: internal and external.
+External information we consider gather visual RGB images and 3D auditive signal.
+Internal information gather life points, oxygen points, inventory, age and food level.
+Motor commands gather body displacement, item use, item drop, item craft, acting on the world, chatting and coopulating.
+
+The population of agents is evolved through a genetic algorithm.
+Agents are free to coopulate (pairwise coopulation) whenever they want to, on condition that they are close enough from each other and have enough resources.
+Two selection pressures are applied to the population in order to bias the genetic search towards general intelligence:
+The first one is implicit and always active ; it is survival in the world of Minecraft.
+The second one is explicit and most of the time inactive ; it is an exam alike to an intelligence test.
+Making progress from one exam session to the other increases the agent's degree of fertility, whereas making worse decreases it.
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
