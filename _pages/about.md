@@ -12,16 +12,23 @@ redirect_from:
 We want to build a general artificial intelligence, which would be able to collaborate with human researchers to help them solving or asking scientific questions.
 
 ## Basic requirements
-To achieve this goal, this clever agent needs to be able to discuss with humans, as well as sharing common human emotions like empathy or the sake for cooperation.
-Thus, the agent needs to be familiar with cooperative social interactions and natural language.
-Also it needs to build intuitive core knowledge about physics of our world, as this intuition is crucial to researchers to tackle difficult problems.
+To achieve this goal, this clever agent needs to be able to discuss with humans, as well as sharing some human emotions like empathy or the sake for cooperation.
+Thus, the agent must be familiar with cooperative social interactions and natural language.
+Also it must build intuitive core knowledge about physics of our world, as this intuition is crucial to researchers to tackle difficult problems.
 
 ## How we do it
 We consider a population of 100 or less agents immersed in the Minecraft world.
-Indeed, embedded intelligence has a lot of advantages:
+Embedded intelligence has a lot of advantages:
 
-seems more suited to develop intuitive knowledge about physics. Also, 
- 
+* more suited to develop intuitive knowledge about physics
+* data have only a few types: sensory (auditive, visual, etc) or motor ; then the same agent can handle any problem immersed in the same world. This is in contrast with non-embedded algorithms, which are wired to receive only numbers or images as input: depending on the problem, their input and output layers need to be re-defined.
+* active learning: agents are able to act on the world to design experiences in order to discriminate between models of their world, which was not possible in the non-embedded setting.
+
+Each agent has a physical body and a neural network.
+This network takes sensory information as input and returns motor commands as outputs.
+
+These commands can affect their body
+
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 ## Markdown guide
