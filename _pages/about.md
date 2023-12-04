@@ -32,7 +32,7 @@ External information we consider gather visual RGB images and 3D auditive signal
 Internal information gather life points, oxygen points, inventory, age and food level.
 Motor commands gather body displacement, item use, item drop, item craft, acting on the world, chatting and coopulating.
 
-The population of agents is evolved through a [genetic algorithm](https://github.com/DidierLeBail/DidierLeBail.github.io/blob/master/_pages/genetic_algo.md).
+The population of agents is evolved through a [genetic algorithm](/genetic_algo).
 Indeed, a gradient-based approach is impossible for three reasons:
 * no cost function is known, whose minimization would imply general intelligence
 * the neural networks we consider contain loops
