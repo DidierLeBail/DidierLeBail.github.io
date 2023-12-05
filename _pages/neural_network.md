@@ -25,7 +25,13 @@ Motor types gather neurons involved in body displacement, item use, item drop, i
 For now, we have identified 8 structural neural types to implement in our networks.
 We think neural diversity is crucial because it allows to save computational resources, as well as reducing the total number of neurons and connections used.
 Indeed, distinct neural types perform distinct kinds of computation, as well as have distinct computational costs.
-For example, a XOR operation requires five perceptron neurons (including the two input neurons) to be implemented, while only one biological neuron is [12🕙](https://www.youtube.com/watch?v=hmtQPrH-gC4&t=1s&ab_channel=ArtemKirsanov).
+For example, a XOR operation requires three perceptron neurons (we exclude the two input neurons) to be implemented, while only one biological neuron is enough: [12:10](https://www.youtube.com/watch?v=hmtQPrH-gC4&t=1s&ab_channel=ArtemKirsanov).
+
+Conversely, a convolutional neural network with 5 up to 8 layers of ReLu actived neurons is needed to simulate accurately a single biological neuron.
+However, the neural network equivalent of the latter is 2000 faster at execution than the detailed system of differential equations used to modelize the biological neuron.
+
+Thus, it would be of great use to build a map between structural types, defining $N(A&rarr>B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
+
 
 ## Plasticity
 
