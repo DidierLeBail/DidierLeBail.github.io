@@ -29,8 +29,8 @@ For example, a XOR operation requires three perceptron neurons (we exclude the t
 
 Conversely, a convolutional neural network with 5 up to 8 layers of ReLu actived neurons is needed to simulate accurately a single biological neuron.
 However, the neural network equivalent of the latter is 2000 faster at execution than the detailed system of differential equations used to modelize the biological neuron.
-Thus, it would be of great use to build a map between structural types, defining $N(A&rarr>B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
-Then both types A and B should be considered if $N(A&rarr>B)$ has a greater computational cost than B and $N(B&rarr>A)$ has a greater computational cost than A.
+Thus, it would be of great use to build a map between structural types, defining $N(A&rarr;B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
+Then both types A and B should be considered if $N(A&rarr;B)$ has a greater computational cost than B and $N(B&rarr;A)$ has a greater computational cost than A.
 
 Here are the 8 structural types we have identified so far:
 * neurones artificiels (sans mémoire, avec fonction d'activation de type sigmoïde ou ReLu)
