@@ -29,13 +29,10 @@ For example, a XOR operation requires three perceptron neurons (we exclude the t
 
 Conversely, a convolutional neural network with 5 up to 8 layers of ReLu actived neurons is needed to simulate accurately a single biological neuron.
 However, the neural network equivalent of the latter is 2000 faster at execution than the detailed system of differential equations used to modelize the biological neuron.
-
 Thus, it would be of great use to build a map between structural types, defining $N(A&rarr>B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
+Then both types A and B should be considered if $N(A&rarr>B)$ has a greater computational cost than B and $N(B&rarr>A)$ has a greater computational cost than A.
 
-
-## Plasticity
-
-Il existe pour le moment 8 types fonctionnels:
+Here are the 8 structural types we have identified so far:
 * neurones artificiels (sans mémoire, avec fonction d'activation de type sigmoïde ou ReLu)
 * neurones temporels (avec état interne donnant une mémoire, avec fonction d'activation de type Heaviside)
 * neurones binaires (combinant ou superposant des opérations binaires de ses entrées, e.g. AND, OR, XOR, etc.)
@@ -45,69 +42,4 @@ Il existe pour le moment 8 types fonctionnels:
 * neurones ordonnés (une permutation des entrées donne une sortie différente, même à poids synaptiques tous égaux)
 * neurones d'ordre supérieur (arité strictement supérieure à 2)
 
-Contrairement aux types sensoriels et moteurs, un neurone ne possède qu'un seul type fonctionnel à la fois.
-Les neurones sont organisés en un réseau dynamique dont l'architecture initiale et les lois d'évolution sont encodées génétiquement.
-
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-The abbreviation CSS stands for "Cascading Style Sheets".
-
-*[CSS]: Cascading Style Sheets
-
-### Cite Tag
-
-"Code is poetry." ---<cite>Automattic</cite>
-
-### Code Tag
-
-You will learn later on in these tests that `word-wrap: break-word;` will be your best friend.
-
-### Strike Tag
-
-This tag will let you <strike>strikeout text</strike>.
-
-### Emphasize Tag
-
-The emphasize tag should _italicize_ text.
-
-### Insert Tag
-
-This tag should denote <ins>inserted</ins> text.
-
-### Keyboard Tag
-
-This scarcely known tag emulates <kbd>keyboard text</kbd>, which is usually styled like the `<code>` tag.
-
-### Preformatted Tag
-
-This tag styles large blocks of code.
-
-<pre>
-.post-title {
-  margin: 0 0 5px;
-  font-weight: bold;
-  font-size: 38px;
-  line-height: 1.2;
-  and here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
-}
-</pre>
-
-### Quote Tag
-
-<q>Developers, developers, developers&#8230;</q> &#8211;Steve Ballmer
-
-### Strong Tag
-
-This tag shows **bold text**.
-
-### Subscript Tag
-
-Getting our science styling on with H<sub>2</sub>O, which should push the "2" down.
-
-### Superscript Tag
-
-Still sticking with science and Isaac Newton's E = MC<sup>2</sup>, which should lift the 2 up.
-
-### Variable Tag
-
-This allows you to denote <var>variables</var>.
+## Plasticity
