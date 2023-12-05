@@ -10,6 +10,9 @@ This network is characterized by three properties:
 * plasticity: connexions between neurons can evolve during the life course of the agent (note that self-loops, i.e. a neuron firing to itself, are allowed)
 * the plasticity rules are not fixed by the hand of the programmer, but rather are decoded from the genome
 
+## Neuron
+A neuron is a one-node directed graph.
+
 ## Neural types
 We distinguish between two types:
 (1) functional types, which include input neurons, output neurons and interneurons, and (2) structural types, which describe how the neuron is processing its inputs.
@@ -22,7 +25,7 @@ External sensory types comprise neurons sensitive to light and neurons sensitive
 Internal sensory types comprise neurons sensitive to life points, neurons sensitive to oxygen points, inventory, age and food level.
 Motor types gather neurons involved in body displacement, item use, item drop, item craft, chatting, coopulating and acting on the world (mining, pushing a button, taking an object on the ground, etc).
 
-For now, we have identified 8 structural neural types to implement in our networks.
+For now, we have identified 6 structural neural types to implement in our networks.
 We think neural diversity is crucial because it allows to save computational resources, as well as reducing the total number of neurons and connections used.
 Indeed, distinct neural types perform distinct kinds of computation, as well as have distinct computational costs.
 For example, a XOR operation requires three perceptron neurons (we exclude the two input neurons) to be implemented, while only one biological neuron is enough: [12:10](https://www.youtube.com/watch?v=hmtQPrH-gC4&t=1s&ab_channel=ArtemKirsanov).
@@ -32,14 +35,12 @@ However, the neural network equivalent of the latter is 2000 faster at execution
 Thus, it would be of great use to build a map between structural types, defining $N(A&rarr;B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
 Then both types A and B should be considered if $N(A&rarr;B)$ has a greater computational cost than B and $N(B&rarr;A)$ has a greater computational cost than A.
 
-Here are the 8 structural types we have identified so far:
-* neurones artificiels (sans mémoire, avec fonction d'activation de type sigmoïde ou ReLu)
-* neurones temporels (avec état interne donnant une mémoire, avec fonction d'activation de type Heaviside)
-* neurones binaires (combinant ou superposant des opérations binaires de ses entrées, e.g. AND, OR, XOR, etc.)
-* neurones mixtes (changent de type au cours de leur fonctionnement)
-* neurones à états finis (ce sont en fait des machines à états finis (FSM))
-* neurones stochastiques (e.g. on applique une fonction linéaire aux entrées du neurones puis on effectue une mesure, i.e. une projection sur une des sorties possibles ; ou alors le neurone possède un degré de liberté interne, comme un spin, qui évolue avec un terme de bruit et un terme de couplage avec les entrées)
-* neurones ordonnés (une permutation des entrées donne une sortie différente, même à poids synaptiques tous égaux)
-* neurones d'ordre supérieur (arité strictement supérieure à 2)
+Here are the 6 structural types we have identified so far:
+* perceptron: no internal state, deterministic activation function (sigmoid, ReLu, Heaviside, etc)
+* temporal: the output is a function of the internal state, whose change is a function of the neuron inputs. An example of such neuron is the [integrate-and-fire model](https://neuronaldynamics.epfl.ch/online/Ch1.S3.html).
+* boolean: the output is a [boolean function](https://en.wikipedia.org/wiki/Boolean_function) of the inputs
+* stochastic: the output is a random variable. The simplest example of such neuron is obtained by considering the activation function as returning a probability to fire.
+* ordered: usually, a neuron takes as input the biased aggregation of its inputs, i.e. the nunmber $b_{i}+\sum_{i}w_{i}x_{i}$. However, this aggregation is actually a pre-processing step that is part of the neuron's computation, and other pre-processing steps could be imagined. One of the simplest is to be sensitive only to the strongest value, i.e. to the number $max_{i}(x_{i})$. Another possibility is to return a vector instead of a number. This allows the neuron to distinguish between its inputs, resulting in a distinct output if two inputs are swapped with another, even in the case of equal synaptic weights. One simple implementation of this is to return the vector $(w_{i}x_{i})_{i}$ after the pre-processing step.
+* transitory: the neuron has a structural type other than transitory that can change according to specified rules
 
 ## Plasticity
