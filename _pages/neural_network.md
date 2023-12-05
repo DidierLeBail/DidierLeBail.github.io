@@ -22,7 +22,7 @@ Generally, the information processing in a neuron is separated in three steps:
 $(w_{i}x_{i})_{i}&rarr;b_{i}+\sum_{i}w_{i}x_{i}$ or $(w_{i}x_{i})_{i}&rarr;\max_{i}(x_{i})$
 
 ## Neural types
-$(w_{i})$
+$(w_{i})_{i}&rarr;$
 We distinguish between two types:
 (1) functional types, which include input neurons, output neurons and interneurons, and (2) structural types, which describe how the neuron is processing its inputs.
 
