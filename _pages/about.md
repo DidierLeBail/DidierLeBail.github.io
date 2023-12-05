@@ -39,7 +39,7 @@ Indeed, a gradient-based approach is impossible for three reasons:
 * we include non-differentiable neurons in our network (although it may be possible to get differentiability back by considering each neuron as a continuous mixture of available types: the cost function should be differentiable with respect to the mixture coefficients)
 Moreover, a gradient-based approach demands more computational resources than a genetic algorithm (to check actually) as the dimension of the search space grows to infinity, which is clearly the case if we allow neural diversity, variable architecture and variable learning rules.
 
-Agents are free to coopulate (pairwise coopulation) whenever they want to, on condition that they are close enough from each other.
+Agents are free to copulate (pairwise coopulation) whenever they want to, on condition that they are close enough from each other.
 Copulating takes resources (food level) and if both agents do have the required resources, the copulation does not lead to any birth.
 Two selection pressures are applied to the population in order to bias the genetic search towards general intelligence:
 The first one is implicit and always active ; it is survival in the world of Minecraft.
