@@ -15,14 +15,11 @@ A neuron is a causal process taking as input a multivariate temporal serie and o
 Said otherwise, a neuron processes some temporal streams of information, while outputting another.
 It can be represented as a one-node directed graph, with one out-edge and an arbitrary number of in-edges.
 Generally, the information processing in a neuron is separated in three steps:
-* aggregation or pre-processing step: usually it is the conversion of the multi-dimensional input into a scalar one, e.g.
+* aggregation or pre-processing step: usually it is the conversion of the multi-dimensional input into a scalar one, e.g. $(w_{i}x_{i})_{i}&rarr;b_i+\sum_i w_i x_i$ or $(w_i x_i)_i&rarr;\max_i(x_i)$
 * update, if any, the state variables
 * deduce the output from the state variables: usually it is done through the use of an activation function
 
-$(w_{i}x_{i})_{i}&rarr;b_{i}+\sum_{i}w_{i}x_{i}$ or $(w_{i}x_{i})_{i}&rarr;\max_{i}(x_{i})$
-
 ## Neural types
-$(w_{i}x_{i})_{i}&rarr;b_i a$
 We distinguish between two types:
 (1) functional types, which include input neurons, output neurons and interneurons, and (2) structural types, which describe how the neuron is processing its inputs.
 
