@@ -11,7 +11,13 @@ This network is characterized by three properties:
 * the plasticity rules are not fixed by the hand of the programmer, but rather are decoded from the genome
 
 ## Neuron
-A neuron is a one-node directed graph.
+A neuron is a causal process taking as input a multivariate temporal serie and outputting a univariate temporal serie.
+Said otherwise, a neuron processes some temporal streams of information, while outputting another.
+It can be represented as a one-node directed graph, with one out-edge and an arbitrary number of in-edges.
+Generally, the information processing in a neuron is separated in three steps:
+* aggregation or pre-processing step: usually it is the conversion of the multi-dimensional input into a scalar one, e.g. $(w_{i}x_{i})_{i}&rarr;b_{i}+\sum_{i}w_{i}x_{i}$ or $(w_{i}x_{i})_{i}&rarr;\max_{i}(x_{i})$
+* update, if any, the state variables
+* deduce the output from the state variables: usually it is done through the use of an activation function
 
 ## Neural types
 We distinguish between two types:
@@ -44,3 +50,4 @@ Here are the 6 structural types we have identified so far:
 * transitory: the neuron has a structural type other than transitory that can change according to specified rules
 
 ## Plasticity
+
