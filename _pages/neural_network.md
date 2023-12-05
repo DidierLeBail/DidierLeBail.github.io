@@ -20,9 +20,9 @@ Generally, the information processing in a neuron is separated in three steps:
 * deduce the output from the state variables: usually it is done through the use of an activation function
 
 $(w_{i}x_{i})_{i}&rarr;b_{i}+\sum_{i}w_{i}x_{i}$ or $(w_{i}x_{i})_{i}&rarr;\max_{i}(x_{i})$
-
-## Neural types
 $(w_{i})_{i}&rarr;$
+## Neural types
+
 We distinguish between two types:
 (1) functional types, which include input neurons, output neurons and interneurons, and (2) structural types, which describe how the neuron is processing its inputs.
 
