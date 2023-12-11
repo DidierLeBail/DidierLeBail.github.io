@@ -5,19 +5,26 @@ author_profile: true
 ---
 
 Each agent has a distinct neural network.
+Informally, a neural network is any stochastic computable function mapping a stream of inputs to a stream of outputs.
+In the framework of neuroscience, the inputs are called sensory information while the outputs are called motor commands.
+The "network" vision comes from the fact that any computing process can decompose into elementary processes that takes some inputs and return some outputs.
+Hence, in particular, any program turns out to be a network.
+The "neural" vision implies that the elementary processes going on at each node of the computing netwok have a very precise mathematical form, as well as the edges linking these nodes.
+
+
 This network is characterized by three properties:
 * neural diversity
 * plasticity: connexions between neurons can evolve during the life course of the agent (note that self-loops, i.e. a neuron firing to itself, are allowed)
-* the plasticity rules are not fixed by the hand of the programmer, but rather are decoded from the genome
+* the plasticity rules are not fixed by the hand of the programmer, but are rather decoded from the genome
 
 ## Neuron
 A neuron is a causal process taking as input a multivariate temporal serie and outputting a univariate temporal serie.
 Said otherwise, a neuron processes some temporal streams of information, while outputting another.
-It can be represented as a one-node directed graph, with one out-edge and an arbitrary number of in-edges.
+A neuron can be represented as a one-node directed graph, with one out-edge and an arbitrary number of in-edges.
 Generally, the information processing in a neuron is separated in three steps:
 * aggregation or pre-processing step: usually it is the conversion of the multi-dimensional input into a scalar one, e.g. $(w_{i}x_{i})_{i}&rarr;b_i+\sum_i w_i x_i$ or $(w_i x_i)_i&rarr;\max_i(w_i x_i)$
-* update, if any, the state variables
-* deduce the output from the state variables: usually it is done through the use of an activation function
+* update, if any, the state variables: e.g. for a biological neuron, state variables include membrane potential or concentrations of ions
+* deduce the output from the state variables: in most artificial neurons, it is done through the use of an activation function, e.g. a ReLu or a sigmoïd (most generally a non-linear operator)
 
 ## Neural types
 We distinguish between two types:
