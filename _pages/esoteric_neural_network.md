@@ -1,3 +1,8 @@
+---
+permalink: /esoteric_neural_network
+title: "What is a neural network?"
+author_profile: true
+---
 
 Informally, a neural network is any stochastic computable function mapping a stream of inputs to a stream of outputs.
 In the framework of neuroscience, the inputs are called sensory information while the outputs are called motor commands.
