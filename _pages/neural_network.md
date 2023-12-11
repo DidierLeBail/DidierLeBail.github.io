@@ -5,7 +5,7 @@ author_profile: true
 ---
 
 Each agent has a distinct neural network.
-If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link](esoteric_neural_network).
+If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link](/esoteric_neural_network).
 
 This network is characterized by three properties:
 * neural diversity
@@ -39,7 +39,7 @@ Indeed, distinct neural types perform distinct kinds of computation, as well as 
 For example, a XOR operation requires three perceptron neurons (we exclude the two input neurons) to be implemented, while only one biological neuron is enough: [12:10](https://www.youtube.com/watch?v=hmtQPrH-gC4&t=1s&ab_channel=ArtemKirsanov).
 
 Conversely, a convolutional neural network with 5 up to 8 layers of ReLu actived neurons is needed to simulate accurately a single biological neuron.
-However, the neural network equivalent of the latter is 2000 faster at execution than the detailed system of differential equations used to modelize the biological neuron.
+However, the neural network equivalent of the latter is 2000 faster at execution time than the detailed system of differential equations used to modelize the biological neuron.
 Thus, it would be of great use to build a map between structural types, defining $N(A&rarr;B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
 Then both types A and B should be considered if $N(A&rarr;B)$ has a greater computational cost than B and $N(B&rarr;A)$ has a greater computational cost than A.
 
@@ -52,5 +52,10 @@ Here are the 6 structural types we have identified so far:
 * transitory: the neuron has a structural type other than transitory that can change according to specified rules
 
 ## Plasticity
-Plasticity is needed for our purpose. It is the ability of the network to change its edges in a dependent way with the stream of inputs it receives.
-Plasticity is needed because it allows the agent to adapt to diverse environments, even though
+Plasticity is the ability of the network to change its edges in a dependent way with the stream of inputs it receives.
+It is needed for our purpose because it allows the agent to adapt to diverse environments, even though those environments were neither encountered by the agent nor by his ancestors.
+
+In our implementation, we require _a minima_ that the architecture of the network is dynamic and that the local learning rules are modulated by some specific signals.
+This allows to freeze learning in some areas as well as boosting it in others, facilitating multi-task learning.
+In biological networks of mamals in particular, this is implemented by the diffusion of dopamine.
+
