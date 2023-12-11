@@ -5,7 +5,7 @@ author_profile: true
 ---
 
 Each agent has a distinct neural network.
-If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link]().
+If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link](esoteric_neural_network).
 
 This network is characterized by three properties:
 * neural diversity
