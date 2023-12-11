@@ -5,4 +5,7 @@ author_profile: true
 ---
 
 Three aspects of our agents are subject to genetic evolution:
-(1) 
+1. aqs
+2. pass
+
+
