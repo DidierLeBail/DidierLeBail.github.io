@@ -14,13 +14,13 @@ Three aspects of our agents' neural networks are subject to genetic evolution:
 
 Although this is not yet implemented, we would like to consider Lamarckian learning, meaning that some skills that an agent learns through his life are transferred back to the genome of his offspring.
 
-##coding the architecture
+## coding the architecture
 pass
 
-##coding the plasticity rules
+## coding the plasticity rules
 pass
 
-##coding the rules for changing the architecture
+## coding the rules for changing the architecture
 pass
 
 
