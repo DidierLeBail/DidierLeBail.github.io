@@ -1,3 +1,8 @@
+---
+permalink: /embodiement
+title: "embodiement"
+author_profile: true
+---
 
 Embodiement has a lot of advantages:
 
