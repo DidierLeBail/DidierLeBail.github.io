@@ -40,3 +40,4 @@ The first one is implicit and always active ; it is survival in the world of Min
 The second one is explicit and most of the time inactive ; it is an [exam](/exams) similar to an intelligence test.
 Making progress from one exam session to the other increases the agent's degree of fertility, whereas making worse decreases it.
 
+Between two exam sessions, agents are free to explore their world and/or discuss with each other so that they perform better at the next session.
