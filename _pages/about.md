@@ -18,14 +18,13 @@ Also it must build intuitive core knowledge about physics of our world, as this 
 
 ## How we do it
 We consider a population of 100 or less agents [immersed](/embodiement) in the [Minecraft](https://minecraft.wiki/) world.
-
 Each agent has a physical body and a [neural network](/neural_network).
 This network takes sensory information as input and returns motor commands as outputs.
+Agents can discuss by posting strings of characters on the chat.
+There is no restriction on these characters or the length of the strings.
 
-There are two types of sensory information: internal and external.
-External information we consider gather visual RGB images and 3D auditive signal.
-Internal information gather life points, oxygen points, inventory, age and food level.
-Motor commands gather body displacement, item use, item drop, item craft, acting on the world, chatting and coopulating.
+Inputs to the neural network include visual RGB images and 3D auditive signal, as well as life points, oxygen points, inventory, age and food level.
+Motor commands include body displacement, item use, drop and craft, acting on the world, chatting and coopulating.
 
 The population of agents is evolved through a [genetic algorithm](/genetic_algo).
 Indeed, a gradient-based approach is impossible for three reasons:
@@ -38,6 +37,6 @@ Agents are free to copulate (pairwise coopulation) whenever they want to, on con
 Copulating takes resources (food level) and if both agents do have the required resources, the copulation does not lead to any birth.
 Two selection pressures are applied to the population in order to bias the genetic search towards general intelligence:
 The first one is implicit and always active ; it is survival in the world of Minecraft.
-The second one is explicit and most of the time inactive ; it is an exam similar to an intelligence test.
+The second one is explicit and most of the time inactive ; it is an [exam](/exams) similar to an intelligence test.
 Making progress from one exam session to the other increases the agent's degree of fertility, whereas making worse decreases it.
 
