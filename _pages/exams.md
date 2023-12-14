@@ -16,11 +16,11 @@ Sound can also be broadcast.
 Four buttons are placed at the center of the room, each button corresponding to a different answer.
 
 ## tasks
-pass
+
 
 génération et mémorisation de chaînes aléatoires,
 Ravens progressive matrices, letter-string analogy problems created by Hofstadter,
-Bongard problems (Harry Foundalis' website) (note these problems need to be turned into a quizz, e.g. by proposing new
+[Bongard problems](https://www.foundalis.com/res/bps/bpidx.htm) (Harry Foundalis' website) (note these problems need to be turned into a quizz, e.g. by proposing new
 candidates and the lapinou has to place these propositions in the correct box or in no box if appopriate (so there may be
 a third box, containing objects that cannot be classified)), Abstraction and Reasoning Corpus (ARC), Impartial-RAVEN corpus,
 extend image completion to handwritten letters and digits (recall lapinous can write in the chat so they know about letters and
