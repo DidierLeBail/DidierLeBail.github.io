@@ -21,7 +21,10 @@ Tasks range from the simplest to the hardest, where the degree of difficulty cor
 
 ### sensory completion
 The simplest tasks involve completion of sensory information.
-Since our agents are endowed with the senses of hearing and vision only, the two basic completion tasks are completion of images and sounds.
+However, this is also the case for the hardest tasks, since any data the agents have access to are sensory data.
+For completing a piece of data, you need a model of these data, that tells you how they are structured as a whole.
+The easiest data to model would be the data the agents are the most accustomed to, i.e. sensory information they receive from their natural surroundings, their natural habitat.
+Since our agents are endowed with the senses of hearing and vision only, then the two basic completion tasks are completion of natural images and natural sounds.
 
 #### completion of images
 A photo of the Minecraft world is randomly taken and projected onto a screen, but a small part of it is removed and let black.
@@ -31,6 +34,8 @@ Each of the four possible answers is a different proposal for the missing part o
 Some seconds of ambient sounds in a Minecraft environment are recored and broadcast into the exam room.
 However, three out of the four answers have been modified by superimposing a weird intruder sound.
 The goal is to identify the natural soundtrack.
+
+
 
 #### completion of videos
 
