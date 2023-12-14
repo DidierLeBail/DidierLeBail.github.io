@@ -26,18 +26,18 @@ For completing a piece of data, you need a model of these data, that tells you h
 The easiest data to model would be the data the agents are the most accustomed to, i.e. sensory information they receive from their natural surroundings, their natural habitat.
 Since our agents are endowed with the senses of hearing and vision only, then the two basic completion tasks are completion of natural images and natural sounds.
 
-#### completion of images
+#### completion of natural images
 A photo of the Minecraft world is randomly taken and projected onto a screen, but a small part of it is removed and let black.
 Each of the four possible answers is a different proposal for the missing part of the image.
 
-#### completion of sounds
+#### completion of natural sounds
 Some seconds of ambient sounds in a Minecraft environment are recored and broadcast into the exam room.
 However, three out of the four answers have been modified by superimposing a weird intruder sound.
 The goal is to identify the natural soundtrack.
 
+#### completion of daily scenes
+pass
 
-
-#### completion of videos
 
 Tasks are gathered in families.
 
