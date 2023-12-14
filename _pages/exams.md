@@ -16,6 +16,12 @@ Sound can also be broadcast.
 Four buttons are placed at the center of the room, each button corresponding to a different answer.
 
 ## tasks
+Tasks range from the simplest to the hardest, where the degree of difficulty corresponds to the degree of abstraction required to complete successfully the task.
+
+### sensory completion
+Cleverness 
+
+Tasks are gathered in families.
 
 
 génération et mémorisation de chaînes aléatoires,
