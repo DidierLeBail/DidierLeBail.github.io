@@ -7,6 +7,7 @@ author_profile: true
 The evaluation of the degree of cleverness of our agents consists in a sequence of individual tasks of the same form as a quizz:
 each task comes along with a description and one or two examples.
 Then four answers are presented to the agent.
+Only one is the correct answer.
 It is also shown that each answer can be selected by pushing a button.
 The agent should give his guess for the correct answer by pushing the button corresponding to his guess.
 
@@ -19,7 +20,19 @@ Four buttons are placed at the center of the room, each button corresponding to 
 Tasks range from the simplest to the hardest, where the degree of difficulty corresponds to the degree of abstraction required to complete successfully the task.
 
 ### sensory completion
-Cleverness 
+The simplest tasks involve completion of sensory information.
+Since our agents are endowed with the senses of hearing and vision only, the two basic completion tasks are completion of images and sounds.
+
+#### completion of images
+A photo of the Minecraft world is randomly taken and projected onto a screen, but a small part of it is removed and let black.
+Each of the four possible answers is a different proposal for the missing part of the image.
+
+#### completion of sounds
+Some seconds of ambient sounds in a Minecraft environment are recored and broadcast into the exam room.
+However, three out of the four answers have been modified by superimposing a weird intruder sound.
+The goal is to identify the natural soundtrack.
+
+#### completion of videos
 
 Tasks are gathered in families.
 
