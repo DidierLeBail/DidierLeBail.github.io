@@ -61,12 +61,12 @@ Another possibility is to propose the twelve boxes all mixed together.
 Then the agent should partition them in the two groups of six boxes that are expected from the secret feature.
 
 ## abstract completion
-In those tasks, the agent should infer rules that do not necessarily apply to sensory data.
+In those tasks, the agent should infer rules that do not necessarily apply to sensory data most encountered in his environment.
 
-### [Raven progressive matrices](https://en.wikipedia.org/wiki/Raven%27s_Progressive_Matrices)
-The goal is to guess the content of the last entry of a matrix, typically 2x2, 4x4 or 6x6.
+### Raven progressive matrices
+The [goal](https://en.wikipedia.org/wiki/Raven%27s_Progressive_Matrices) is to guess the content of the last entry of a matrix, typically 2x2, 4x4 or 6x6.
 Every entry other than the last one has already been filled according to a rule, that the agent might need to infer in order to identify the correct completion.
-Since the design of the original set, a larger set has been released, called the [Impartial-RAVEN corpus](https://arxiv.org/abs/2002.06838).
+Ever since the design of the original set, a larger set has been released, called the [Impartial-RAVEN corpus](https://arxiv.org/abs/2002.06838).
 
 ### the abstract and reasoning corpus (ARC)
 Pairs of images with colored pixels are shown as examples of associations.
@@ -86,8 +86,3 @@ Assuming a square background and periodic boundary conditions, only three button
 * one button moving to the top
 * one button changing the value of the selected pixel
 
-
- - basic arithmetic
- - intuitive physics and objects
- - spatial geometry (includes relations like "in front of", "between", "next to", "far from", etc)
- - agents and goal-directedness (basic theory of mind),
