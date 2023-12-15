@@ -42,8 +42,8 @@ Each answer is a proposal for the intermediate frames and soundtrack that have b
 Note that some proposals can have the correct frames but not the correct soundtrack, etc.
 The correct answer has both the original frames and soundtrack.
 
-## 
-
+## abstract classification
+Another aspect of intelligence other than data inference, is to find in which respect can two things be considered the same.
 
 génération et mémorisation de chaînes aléatoires,
 Ravens progressive matrices, letter-string analogy problems created by Hofstadter,
