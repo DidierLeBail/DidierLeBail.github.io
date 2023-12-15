@@ -16,30 +16,33 @@ On one wall of the room are projected images or videos.
 Sound can also be broadcast.
 Four buttons are placed at the center of the room, each button corresponding to a different answer.
 
-## tasks
-Tasks range from the simplest to the hardest, where the degree of difficulty corresponds to the degree of abstraction required to complete successfully the task.
+# tasks
+Tasks range from the simplest to the hardest, where the degree of difficulty corresponds to the degree of abstraction required to successfully complete the task.
 
-### sensory completion
+## perceptual completion
 The simplest tasks involve completion of sensory information.
-However, this is also the case for the hardest tasks, since any data the agents have access to are sensory data.
+However, this is also the case for the hardest tasks, since the only data the agents have access to are sensory data.
 For completing a piece of data, you need a model of these data, that tells you how they are structured as a whole.
 The easiest data to model would be the data the agents are the most accustomed to, i.e. sensory information they receive from their natural surroundings, their natural habitat.
 Since our agents are endowed with the senses of hearing and vision only, then the two basic completion tasks are completion of natural images and natural sounds.
 
-#### completion of natural images
+### completion of natural images
 A photo of the Minecraft world is randomly taken and projected onto a screen, but a small part of it is removed and let black.
 Each of the four possible answers is a different proposal for the missing part of the image.
 
-#### completion of natural sounds
+### completion of natural sounds
 Some seconds of ambient sounds in a Minecraft environment are recored and broadcast into the exam room.
 However, three out of the four answers have been modified by superimposing a weird intruder sound.
 The goal is to identify the natural soundtrack.
 
-#### completion of daily scenes
-pass
+### completion of daily scenes
+Some scenes of a typical day in the Minecraft world are recorded together with the ambient sounds, then broadcast into the room.
+Some parts of the video are removed : e.g. if the video is 1 min long, the frames from 20 to 40 seconds are left blank.
+Each answer is a proposal for the intermediate frames and soundtrack that have been removed.
+Note that some proposals can have the correct frames but not the correct soundtrack, etc.
+The correct answer has both the original frames and soundtrack.
 
-
-Tasks are gathered in families.
+## 
 
 
 génération et mémorisation de chaînes aléatoires,
