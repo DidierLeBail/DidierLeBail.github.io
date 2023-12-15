@@ -52,16 +52,14 @@ Six boxes are drawn on each page, and each box is filled up with a black and whi
 All six boxes on the left page share a common feature, which also is absent from every box on the right page.
 The goal is to formulate this feature in natural language.
 
-In our setting, natural language cannot be used so instead, we propose a new drawing, and the agent should choose which on side it shall go.
-This shrinks down the number of answers from four in the other tasks, to two in this task.
+In our setting, natural language cannot be used, so instead, we propose a new drawing, and the agent should choose on which side it should go.
+This shrinks down the number of possible answers from four in the other tasks, to two in this task.
 Another possibility is to propose the twelve boxes all mixed together.
-Then the agent should partition them in the two groups of six boxes we expect.
+Then the agent should partition them in the two groups of six boxes that are expected from the secret feature.
 
-génération et mémorisation de chaînes aléatoires,
+
 Ravens progressive matrices, letter-string analogy problems created by Hofstadter,
- (Harry Foundalis' website) (note these problems need to be turned into a quizz, e.g. by proposing new
-candidates and the lapinou has to place these propositions in the correct box or in no box if appopriate (so there may be
-a third box, containing objects that cannot be classified)), Abstraction and Reasoning Corpus (ARC), Impartial-RAVEN corpus,
+Abstraction and Reasoning Corpus (ARC), Impartial-RAVEN corpus,
 extend image completion to handwritten letters and digits (recall lapinous can write in the chat so they know about letters and
 digits), fulfill a task like write a character or a figure by following ad-hoc rules (e.g. lapinou moves or gestures are
 translated into drawings on a screen so the lapinou has to learn on-the-fly how to produce the requested figure),
