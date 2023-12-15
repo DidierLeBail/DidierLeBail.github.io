@@ -45,27 +45,46 @@ The correct answer has both the original frames and soundtrack.
 
 ## abstract classification
 An aspect of intelligence other than data completion is to distinguish between things that are alike and things that are different.
+
+### Bongard problems
 One of the most famous example of such a task are the so-called [Bongard problems](https://www.foundalis.com/res/bps/bpidx.htm).
 However, these problems must be adapted to our quizz setting.
 Originally, consider a background made up of two blank pages.
 Six boxes are drawn on each page, and each box is filled up with a black and white drawing.
 All six boxes on the left page share a common feature, which also is absent from every box on the right page.
 The goal is to formulate this feature in natural language.
+Although only 100 problems were originally designed, then joined by 300 more designed by hand, now new problems can be generated [automatically](https://arxiv.org/abs/2010.00763), ensuring enough diversity over generations of agents.
 
-In our setting, natural language cannot be used, so instead, we propose a new drawing, and the agent should choose on which side it should go.
+Note however, that in our setting natural language cannot be used, so instead, we propose a new drawing, and the agent should choose on which side it should go.
 This shrinks down the number of possible answers from four in the other tasks, to two in this task.
 Another possibility is to propose the twelve boxes all mixed together.
 Then the agent should partition them in the two groups of six boxes that are expected from the secret feature.
 
+## abstract completion
+In those tasks, the agent should infer rules that do not necessarily apply to sensory data.
 
-Ravens progressive matrices, letter-string analogy problems created by Hofstadter,
-Abstraction and Reasoning Corpus (ARC), Impartial-RAVEN corpus,
-extend image completion to handwritten letters and digits (recall lapinous can write in the chat so they know about letters and
-digits), fulfill a task like write a character or a figure by following ad-hoc rules (e.g. lapinou moves or gestures are
-translated into drawings on a screen so the lapinou has to learn on-the-fly how to produce the requested figure),
-Bongard-LOGO (see "A new benchmark for human-level concept learning and reasoning"), overall focus on core knowledge:
+### [Raven progressive matrices](https://en.wikipedia.org/wiki/Raven%27s_Progressive_Matrices)
+The goal is to guess the content of the last entry of a matrix, typically 2x2, 4x4 or 6x6.
+Every entry other than the last one is already filled according to a rule, that the agent might need to infer in order to identify the correct completion.
+Since the design of the original set, a larger set has been released, called the [Impartial-RAVEN corpus](https://arxiv.org/abs/2002.06838).
+
+### the abstract and reasoning corpus (ARC)
+
+[pass](https://lab42.global/arc/)
+
+## other tasks
+It would be possible to extend beyond the quizz setting so that the agent would be able to play generic games.
+
+Here is an example of such a game:
+a simple geometric figure made of a few black or white pixels is shown for a short time, then disappears.
+The agent is supposed to re-draw this figure on a black screen pixel after pixel.
+Assuming a square background and periodic boundary conditions, only three buttons are needed:
+* one button moving the selected pixel to the right
+* one button moving to the top
+* one button changing the value of the selected pixel
+
+
  - basic arithmetic
  - intuitive physics and objects
  - spatial geometry (includes relations like "in front of", "between", "next to", "far from", etc)
  - agents and goal-directedness (basic theory of mind),
-include generative tasks,
