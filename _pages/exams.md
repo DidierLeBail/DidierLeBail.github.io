@@ -29,6 +29,7 @@ Since our agents are endowed with the senses of hearing and vision only, then th
 ### completion of natural images
 A photo of the Minecraft world is randomly taken and projected onto a screen, but a small part of it is removed and let black.
 Each of the four possible answers is a different proposal for the missing part of the image.
+The goal is to identify the correct gluing.
 
 ### completion of natural sounds
 Some seconds of ambient sounds in a Minecraft environment are recored and broadcast into the exam room.
@@ -43,11 +44,22 @@ Note that some proposals can have the correct frames but not the correct soundtr
 The correct answer has both the original frames and soundtrack.
 
 ## abstract classification
-Another aspect of intelligence other than data inference, is to find in which respect can two things be considered the same.
+An aspect of intelligence other than data completion is to distinguish between things that are alike and things that are different.
+One of the most famous example of such a task are the so-called [Bongard problems](https://www.foundalis.com/res/bps/bpidx.htm).
+However, these problems must be adapted to our quizz setting.
+Originally, consider a background made up of two blank pages.
+Six boxes are drawn on each page, and each box is filled up with a black and white drawing.
+All six boxes on the left page share a common feature, which also is absent from every box on the right page.
+The goal is to formulate this feature in natural language.
+
+In our setting, natural language cannot be used so instead, we propose a new drawing, and the agent should choose which on side it shall go.
+This shrinks down the number of answers from four in the other tasks, to two in this task.
+Another possibility is to propose the twelve boxes all mixed together.
+Then the agent should partition them in the two groups of six boxes we expect.
 
 génération et mémorisation de chaînes aléatoires,
 Ravens progressive matrices, letter-string analogy problems created by Hofstadter,
-[Bongard problems](https://www.foundalis.com/res/bps/bpidx.htm) (Harry Foundalis' website) (note these problems need to be turned into a quizz, e.g. by proposing new
+ (Harry Foundalis' website) (note these problems need to be turned into a quizz, e.g. by proposing new
 candidates and the lapinou has to place these propositions in the correct box or in no box if appopriate (so there may be
 a third box, containing objects that cannot be classified)), Abstraction and Reasoning Corpus (ARC), Impartial-RAVEN corpus,
 extend image completion to handwritten letters and digits (recall lapinous can write in the chat so they know about letters and
