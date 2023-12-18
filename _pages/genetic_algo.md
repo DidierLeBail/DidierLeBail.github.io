@@ -14,6 +14,13 @@ Three aspects of our agents' neural networks are subject to genetic evolution:
 
 Although this is not yet implemented, we would like to consider Lamarckian learning, meaning that some skills that an agent learns through his life are transferred back to the genome of his offspring.
 
+The key aspects of our memetic algorithm are the following:
+* complexification (we start from simple phenotypes, then increasingly complex)
+* speciation to preserve innovations
+* Lamarckian learning and epigenetics
+* the evolution strategy is itself subject to evolution
+
+
 ## coding the architecture
 pass
 
