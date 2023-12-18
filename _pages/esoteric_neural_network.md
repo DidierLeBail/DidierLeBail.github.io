@@ -28,7 +28,20 @@ For example, the search would be hopeless if we had consider the set of all algo
 Then, the question is:
 how large can we choose the search space, so that we are still able to find a good solution?
 
-Let us introduce a bit of notations to clarify.
 Let us denote by $E$ the set of algorithms, among which we seek a solution to our problem.
-What is the most general structure that we need to endow $E$ with, so that learning is still possible?
+What is the most general structure that we need to put on $E$, so that learning is still possible?
+By learning is possible, we mean there exists a computable algorithm that finds increasingly good solutions faster than Monte-Carlo search.
+
+Actually, we would like this searching algorithm to itself improve with time.
+Consider life for example.
+Life exhibits hierarchical learning:
+at the first level is running a genetic algorithm.
+Individuals produced by this algorithm are themselves learning algorithms.
+But these algorithms themselves can greatly improve their way of learning!
+
+This is in sharp contrast with the neural networks and training methods used today.
+Indeed, we are used to think inside a given well-defined framework.
+However, in biological learning, this very framework is part of the learning process!
+
+How to appraise learning at such an abstract level?
 
