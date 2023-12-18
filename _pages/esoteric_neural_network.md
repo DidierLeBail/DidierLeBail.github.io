@@ -37,10 +37,10 @@ Consider life for example.
 Life exhibits hierarchical learning:
 at the first level is running a genetic algorithm.
 Individuals produced by this algorithm are themselves learning algorithms.
-But these algorithms themselves can greatly improve their way of learning!
+But these algorithms themselves can learn how to greatly improve their way of learning!
 
 This is in sharp contrast with the neural networks and training methods used today.
-Indeed, we are used to think inside a given well-defined framework.
+Indeed, we are used to think inside a given well-defined and bounded framework.
 However, in biological learning, this very framework is part of the learning process!
 
 How to appraise learning at such an abstract level?
