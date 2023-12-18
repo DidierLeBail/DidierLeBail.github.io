@@ -77,6 +77,7 @@ An extended set and its description is available [here](https://lab42.global/arc
 
 ## other tasks
 It would be possible to extend beyond the quizz setting so that the agent would be able to play generic games.
+In particular, this would allow the agent to generate the correct answer rather than selecting it.
 
 Here is an example of such a game:
 a simple geometric figure made of a few black or white pixels is shown for a short time, then disappears.
@@ -86,3 +87,16 @@ Assuming a square background and periodic boundary conditions, only three button
 * one button moving to the top
 * one button changing the value of the selected pixel
 
+Other interesting tasks would involve both sound and images.
+These tasks would comprise extensions of Bongard problems, Raven matrices or the ARC corpus to both sounds and images.
+An example of such task would be the completion of a succession of sounds.
+Another example of task would test for associative memory:
+Some images are shown simultaneously with a different sound, then if a sound is played, the agent must identify which image it had been paired with.
+
+Other interesting tasks would be ethic problems:
+a social context is given, typically a video of an agent in need of help.
+The correct answer to this test is the action leading to the greatest common good.
+
+The last type of task would test the understanding of the peers:
+a video of an agent is projected and the tested agent should be able, among different possibilities, to select the correct outcome.
+It is a completion task, but to complete it, the agent should have developed a model of the other agents.
