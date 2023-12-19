@@ -19,11 +19,55 @@ Moreover, the more intelligent the agents are, the better they will be at improv
 
 How to implement this feedback loop?
 Inspiring from Nature, at least three solutions are available:
-Lamarckian evolution, epigenetics and sexual selection.
+[Lamarckian evolution](https://en.wikipedia.org/wiki/Lamarckism), [epigenetics](https://en.wikipedia.org/wiki/Epigenetics) and sexual selection.
 
 The latter solution is the easiest to implement:
 recall that our agents are free to choose their mating partners.
 As every agent is distinguishable from one another, there is the possibility that the wish for the ideal partner will emerge, meaning that agents will become selective in their mating choices.
+
+We will discuss the implementation of the two other solutions later, because at this stage we lack of material.
+Another important point -and easier to deal with right now- in a genetic algorithm is the encoding and decoding problem.
+In Nature, we have the separation between a genotype (roughly strings) and a phenotype (the individual produced by a string).
+The genetic operators like cross-over or mutations are applied to the genotype.
+To evaluate how efficient a genotype is, we need first to compute its phenotype and then immerse it into an environment.
+In particular, at environment fixed, two genotypes outputting the same phenotype will have the same fitness value.
+It is thus important that every phenotype is equally likely in the genotype space:
+the inverse image of the map genotype to phenotype should have a cardinal similar for every phenotype.
+If phenotypes are much unbalanced, the evolution process would have a hard time finding a genotype that produces a not-dominant phenotype.
+But here is the point: we have no way to know _a priori_ whether or not every phenotype is equally likely, or even better, whether interesting phenotypes are more likely.
+
+Taking a step back, we have a bunch of parameters (genotype) that we input to a program (decoding process) to obtain another bunch of parameters (phenotype).
+Why should we spend time and energy to design an elaborate decoding process?
+For example, we could use what is called a direct encoding.
+It consists in the genotype identified with the phenotype, i.e. the decoding process is the identity map.
+Let us test this approach in the case of neural networks.
+A genotype will be the data, for each neuron in the network, of its internal parameters, the identity of the neurons from which it receives inputs, and the identity of the neurons to which it sends outputs.
+The genotype includes also the parameters (typically the weight) of each synapse existing in the network.
+
+The first observation is an obstacle to scaling:
+the genotype has the same size as the phenotype, but we would like to evolve large phenotypes.
+This results in a very large search space (the space of genotypes), in which it will be difficult to find a good solution.
+Actually, we should keep in mind that the only effective searches are searches in small spaces.
+If you are given a large space, you should find a way to restrict your search as much as possible.
+In a general setting, you might try hierarchical search:
+you start with large steps in your space, eventually dismissing large regions of it, then exploring with finer steps the remaining regions.
+However, this works only if the impression you had with large steps confirms with the smaller steps:
+it could be that the solution is located in one of the large regions you have dismissed at first!
+Being able to step back is thus crucial if you want our search to be effective:
+diversity should be boosted as soon as all individuals perform similarly.
+
+The second observation with a direct encoding is the number of steps needed to find a good solution.
+The mutation of one parameter of the genotype will lead to the modification of one parameter of the phenotype.
+Imagine that the weight of a single synapse is changed in your brain.
+What happens then?
+Most likely nothing at all.
+However, if you change a single nucleotide in your DNA, you may get phenotypes ranging from sane to lethal disease.
+Yet this is not true for every nucleotide:
+mutating some will not cause significant changes at the phenotype level.
+We see that in Nature, the phenotype search is made simultaneously at different scales, which speeds up the search greatly and facilitates diversity.
+However, large scale search has a price:
+it produces also unfit individuals (typically genetic diseases).
+
 
 
 Three aspects of our agents' neural networks are subject to genetic evolution:
