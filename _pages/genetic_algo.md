@@ -71,7 +71,7 @@ We see that in Nature, the phenotype search is made simultaneously at different 
 Note however that large scale search has a price:
 it produces some unfit individuals (typically genetic diseases).
 
-$&rarr$
+$rarr$
 
 The two observations we have made point toward the same concepts of hierarchy and modularity.
 In Nature, this is implemented in part by the separation of the decoding process in successive phases:\
