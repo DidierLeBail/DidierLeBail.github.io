@@ -79,7 +79,14 @@ Hence, to be able to generate highly complex phenotypes, it might worth to consi
 
 ## decoding structure suited to the generation of neural networks
 
+To generate a neural network in a sequential way, we could for example build the topology, i.e. a set of nodes and undirected edges.
+In a second phase, we differentiate neurons in the various types described in [this page](/neural_network).
+Then we make the edges directed and add weights on them.
+In a final phase, we tune the internal parameters of the neurons and eventually correct the topology of the network.
 
+
+
+Let us break down the generation of a neural network
 
 
 Let us recap what our genetic algorithm should implement:
