@@ -56,19 +56,25 @@ it could be that the solution is located in one of the large regions you have di
 Being able to step back is thus crucial if you want our search to be effective:
 diversity should be boosted as soon as all individuals perform similarly.
 
-The second observation with a direct encoding is the number of steps needed to find a good solution.
+The second observation is the large number of steps needed to find a good solution with a direct encoding.
 The mutation of one parameter of the genotype will lead to the modification of one parameter of the phenotype.
-Imagine that the weight of a single synapse is changed in your brain.
+Imagine that the weight of a single synapse has changed in your brain.
 What happens then?
 Most likely nothing at all.
-However, if you change a single nucleotide in your DNA, you may get phenotypes ranging from sane to lethal disease.
+However, if you change a single nucleotide in your DNA, you may get phenotypes ranging from sane to unviable.
 Yet this is not true for every nucleotide:
-mutating some will not cause significant changes at the phenotype level.
+mutating some will not cause any significant changes at the phenotype level.
 We see that in Nature, the phenotype search is made simultaneously at different scales, which speeds up the search greatly and facilitates diversity.
-However, large scale search has a price:
+Note however that large scale search has a price:
 it produces some unfit individuals (typically genetic diseases).
 
+The two observations we have made point toward the same concepts of hierarchy and modularity.
+What we need is to facilitate the emergence of a modular decoding process, but not to hard-code a particular structure.
 
+
+Let us recap what our genetic algorithm should implement:
+* indirect encoding
+* 
 
 Three aspects of our agents' neural networks are subject to genetic evolution:
 1. the initial architecture
