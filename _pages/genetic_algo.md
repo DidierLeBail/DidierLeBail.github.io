@@ -66,7 +66,7 @@ Yet this is not true for every nucleotide:
 mutating some will not cause significant changes at the phenotype level.
 We see that in Nature, the phenotype search is made simultaneously at different scales, which speeds up the search greatly and facilitates diversity.
 However, large scale search has a price:
-it produces also unfit individuals (typically genetic diseases).
+it produces some unfit individuals (typically genetic diseases).
 
 
 
