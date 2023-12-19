@@ -68,9 +68,11 @@ We see that in Nature, the phenotype search is made simultaneously at different 
 Note however that large scale search has a price:
 it produces some unfit individuals (typically genetic diseases).
 
+$&rarr$
+
 The two observations we have made point toward the same concepts of hierarchy and modularity.
 In Nature, this is implemented in part by the separation of the decoding process in successive phases:\
-DNA $`&rarr`$ RNA $&rarr$ peptids $&rarr$ proteins $&rarr$ cells $&rarr$ organs $&rarr$ organism\
+DNA $&rarr$ RNA $&rarr$ peptids $&rarr$ proteins $&rarr$ cells $&rarr$ organs $&rarr$ organism\
 This allows to break down the difficult task of synthesizing a complex organsim into a succession of more tractable tasks.
 It is very reminiscent of deep networks:\
 Although in theory, one hidden layer is enough to interpolate any function, in practice it is much more efficient to train a neural network with multiple layers.
