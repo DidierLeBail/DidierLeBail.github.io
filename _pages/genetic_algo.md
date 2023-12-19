@@ -69,7 +69,9 @@ Note however that large scale search has a price:
 it produces some unfit individuals (typically genetic diseases).
 
 The two observations we have made point toward the same concepts of hierarchy and modularity.
-What we need is to facilitate the emergence of a modular decoding process, but not to hard-code a particular structure.
+In Nature, this is implemented in particular by the separation of the decoding process in successive phases:
+DNA&rarr
+
 
 
 Let us recap what our genetic algorithm should implement:
