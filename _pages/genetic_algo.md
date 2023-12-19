@@ -86,19 +86,12 @@ In a final phase, we tune the internal parameters of the neurons and eventually 
 
 
 
-Let us break down the generation of a neural network
-
-
-Let us recap what our genetic algorithm should implement:
-* indirect encoding
-* 
+PASS
 
 Three aspects of our agents' neural networks are subject to genetic evolution:
 1. the initial architecture
 2. the plasticity rules at fixed architecture
 3. the rules for changing the architecture (making or removing connections between neurons, introduction or removal of neurons in the network, etc)
-
-Although this is not yet implemented, we would like to consider Lamarckian learning, meaning that some skills that an agent learns through his life are transferred back to the genome of his offspring.
 
 The key aspects of our memetic algorithm are the following:
 * complexification (we start from simple phenotypes, then increasingly complex)
