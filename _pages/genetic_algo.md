@@ -1,3 +1,6 @@
+<Head>
+    <meta charSet="utf-8" />
+</Head>
 ---
 permalink: /genetic_algo
 title: "Genetic algorithm"
