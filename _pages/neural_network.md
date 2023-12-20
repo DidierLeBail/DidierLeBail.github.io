@@ -9,8 +9,10 @@ If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_ne
 
 This network is characterized by three properties:
 * neural diversity
-* plasticity: connexions between neurons can evolve during the life course of the agent (note that self-loops, i.e. a neuron firing to itself, are allowed)
+* plasticity: connexions between neurons can evolve during the life course of the agent
 * the plasticity rules are not fixed by the hand of the programmer, but are rather decoded from the genome
+* unconstrained topology: self-loops, i.e. a neuron firing to itself, are allowed. Parallel edges (multiple edges from a node to another) are also allowed. Edges are directed and weighted. A neuron can have no inputs. The only requirement for the topology of a network is that there exists at least one path from every input neuron to an output neuron. Similarly, for every output neuron, it should exist at least one path from an input neuron to that output neuron.
+
 
 ## Neuron
 A neuron is a causal process taking as input a multivariate temporal serie and outputting a univariate temporal serie.
