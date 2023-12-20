@@ -88,7 +88,10 @@ What is the simplest algorithm that generates a network?\
 
 ### first step: simplest algorithmic generation process
 First, let us focus on the task on synthesizing the simplest kind of networks:
-undirected, unweighted, with no parallel edges
+undirected and unweighted.
+
+
+PASS
 
 
 ## basic epigenetics
