@@ -83,8 +83,13 @@ To generate a neural network in a sequential way, we could for example build the
 In a second phase, we differentiate neurons in the various types described in [this page](/neural_network).
 Then we make the edges directed and add weights on them.
 In a final phase, we tune the internal parameters of the neurons and eventually correct the topology of the network.
+To perform all of this, we need a programming language.\
+What is the simplest algorithm that generates a network?\
+
+### first step: simplest algorithmic generation process
 
 
+## basic epigenetics
 
 PASS
 
