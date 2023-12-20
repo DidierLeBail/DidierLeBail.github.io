@@ -87,13 +87,19 @@ To perform all of this, we need a programming language.\
 What is the simplest algorithm that generates a network?\
 
 ### first step: simplest algorithmic generation process
+First, let us focus on the task on synthesizing the simplest kind of networks:
+undirected, unweighted, with no parallel edges
 
 
 ## basic epigenetics
 Information should be transmitted directly from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic transmission and decoding.
-To achieve this, we introduce two new functional types of neurons:
+To achieve this, we introduce two functional types of neurons:
 (1) ferry neurons and (2) trustee neurons.
 As the names suggest, the ferry neurons of the mother will output signals to the trustee neurons of the child during the first stage of the child's development (see the [description of the agents](/agents)).
+
+A future improvement would be that some part of the brain sends also signals to the mutating system, helping it to find promising mutations.
+For example, some neurons could build a string of a limited number of characters during the life of the agent, and this string could be sent as one of the symbolic inputs to the mutating system.
+To limit errors in the string, the writing neurons should be informed back of the string content at any time of the agent's life, so that they have the possibility to correct it.
 
 ## adaptive mutations
 
