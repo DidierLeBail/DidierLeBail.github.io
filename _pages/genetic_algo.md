@@ -84,6 +84,20 @@ In a second phase, we differentiate neurons in the various types described in [t
 Then we make the edges directed and add weights on them.
 In a final phase, we tune the internal parameters of the neurons and eventually correct the topology of the network.
 To perform all of this, we need a programming language.\
+
+In a generic setting, such a language can be viewed as a [context-free grammar](https://en.wikipedia.org/wiki/Context-free_grammar).
+In a nutshell, it is the data of symbols and rewriting rules of the form:\
+single symbol $&rarr;& string of symbols\
+
+Those rules can be themselves concantenated into a single string, called the chromosome describing our grammar.
+However, designing a grammar is not enough to generate a network.
+Now we have to write an algorithm, i.e. a [syntactic tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) respecting the rules of our grammar that outputs the desired network.
+
+This tree indicates which rewriting rules among the available ones in our grammar we pick at each stage of the network generation process.
+The syntactic tree itself is also part of the genotype, as a chromosome separated from the one encoding the grammar.
+
+PASS
+
 What is the simplest algorithm that generates a network?\
 
 ### first step: simplest algorithmic generation process
