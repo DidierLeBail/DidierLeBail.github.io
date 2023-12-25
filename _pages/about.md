@@ -17,8 +17,9 @@ Thus, the agent must be familiar with cooperative social interactions and natura
 Also it must build intuitive core knowledge about physics of our world, as this intuition is crucial to researchers to tackle difficult problems.
 
 ## How we do it
-We consider a population of 100 or less agents [immersed](/embodiement) in the [Minecraft](https://minecraft.wiki/) world.
-Each agent has a physical body and a [neural network](/neural_network).
+We consider a population of 100 or less agents immersed in the [Minecraft](https://minecraft.wiki/) world.
+
+In addition to their body, each agent has a [neural network](/neural_network).
 This network takes sensory information as input and returns motor commands as outputs.
 Agents can discuss by posting strings of characters on the chat.
 There is no restriction on these characters or the length of the strings.
