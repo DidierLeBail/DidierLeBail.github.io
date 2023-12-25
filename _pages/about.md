@@ -17,7 +17,11 @@ Thus, the agent must be familiar with cooperative social interactions and natura
 Also it must build intuitive core knowledge about physics of our world, as this intuition is crucial to researchers to tackle difficult problems.
 
 ## How we do it
-We consider a population of 100 or less agents immersed in the [Minecraft](https://minecraft.wiki/) world.
+We consider a population of 100 or less agents immersed in the [Minecraft](https://minecraft.wiki/) world.\
+We think embodiement offers important advantages:
+* more suited to develop intuitive knowledge about physics
+* data have only a few types: sensory (auditive, visual, etc) or motor ; then the same agent can handle any problem immersed in the same world. This is in contrast with non-embodied algorithms, which are wired to receive only numbers or images as input: depending on the problem, their input and output layers need to be re-defined.
+* active learning: agents are able to act on the world to design experiences in order to discriminate between models of their world
 
 In addition to their body, each agent has a [neural network](/neural_network).
 This network takes sensory information as input and returns motor commands as outputs.
