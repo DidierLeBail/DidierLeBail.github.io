@@ -10,7 +10,7 @@ In addition to that, an agent encounters three stages of development:
 
 The benefit of having three stages is to allow the agent's brain to develop for longer.
 
-### prenatal
+## prenatal
 In the prenatal stage, external sensory inputs (vision and hearing) are disabled, but interal inputs are activated.
 This encompasses food level, oxygen level, life points and inventory content.
 The agent is not allowed to move by itself, meaning that the state of the motoneurons is not converted into motor commands acting upon the agent's body.
@@ -27,13 +27,13 @@ its food level is automatically replenished when it drops too low.
 The very existence of the prenatal agent is hidden to every other agent, except to the mother:
 The brain of her is interfaced with the neural network of the prenatal agent via specialized neurons called the ferry neurons.
 
-### child
+## child
 In the child stage, the agent does not benefit from automatic food replenishment anymore.
 However, it cannot forage food by itself, because it is still physically tied to its mother.
 It can only be fed by the adult agents, who now can see and hear him.
 The child can communicate with them through the chat and receives light and sounds.
 
-### adult
+## adult
 In the adult stage, every input and output entry is activated:
 the agent now can wander freely through the world of Minecraft, endowed with all the gameplay possibilities of human players other than modding or cheating:
 mining, crafting, navigating, using items, etc.
