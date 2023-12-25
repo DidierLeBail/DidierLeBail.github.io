@@ -38,7 +38,7 @@ Copulating takes resources (food level) and if both agents do have the required 
 Two selection pressures are applied to the population in order to bias the genetic search towards general intelligence:
 The first one is implicit and always active ; it is survival in the world of Minecraft.
 The second one is explicit and most of the time inactive ; it is an [exam](/exams) similar to an intelligence test.
-This test evaluates core knowledge like intuitive Physics, basic arithmetic, spatial reasoning and basic analogies.
+This test evaluates core knowledge like intuitive Physics, basic arithmetic, spatial reasoning and the ability to draw basic analogies.
 Making progress from one exam session to the other increases the agent's degree of fertility, whereas making worse decreases it.
 
 Between two exam sessions, agents are free to explore their world and/or discuss with each other so that they perform better at the next session.
