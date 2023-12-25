@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 ## Final goal
-We want to build a general artificial intelligence, which would be able to collaborate with human researchers to help them solving or asking scientific questions.
+We want to build an Artificial General Intelligence (AGI), which would be able to collaborate with human researchers to help them solving or asking scientific questions.
 
 ## Basic requirements
 To achieve this goal, this clever [agent](/agents) needs to be able to discuss with humans, as well as sharing some human emotions like empathy or the sake for cooperation.
