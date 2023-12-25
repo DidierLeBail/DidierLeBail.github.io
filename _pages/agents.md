@@ -25,10 +25,24 @@ any agent can successfully copulate with any other one.
 In the prenatal stage, the agent does not cost any energy to the mother:
 its food level is automatically replenished when it drops too low.
 The very existence of the prenatal agent is hidden to every other agent, except to the mother:
-The brain of her is interfaced with the neural network of the prenatal agent via specialized neurons called the teacher neurons.
+The brain of her is interfaced with the neural network of the prenatal agent via specialized neurons called the ferry neurons.
 
 ### child
 In the child stage, the agent does not benefit from automatic food replenishment anymore.
 However, it cannot forage food by itself, because it is still physically tied to its mother.
-It can only be fed by the adult agents.
-Its survival at this stage depends on its ability to convince adult agents to feed him.
+It can only be fed by the adult agents, who now can see and hear him.
+The child can communicate with them through the chat and receives light and sounds.
+
+### adult
+In the adult stage, every input and output entry is activated:
+the agent now can wander freely through the world of Minecraft, endowed with all the gameplay possibilities of human players:
+mining, crafting, navigating, using items, etc.
+
+In addition to that, the adult agent can copulate with other adults:
+for this to be possible, the two agents need both to consent to the copulation and be physically close enough to each other.
+Also, they need both to have enough life points.
+
+A copulation takes food and oxygen from the two agents, and leads to a birth with a probability depending of the level of fertility of the parents.
+This level is updated after each [exam](/exams) session:
+an improvement in an agent's answers increases its level of fertility, while a decrease in performance leads to a decrease in fertility.
+If the copulation leads to a birth, one of the parents is chosen at random to host a newborn agent in prenatal stage.
