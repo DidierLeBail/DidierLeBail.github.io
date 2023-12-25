@@ -35,14 +35,21 @@ The child can communicate with them through the chat and receives light and soun
 
 ### adult
 In the adult stage, every input and output entry is activated:
-the agent now can wander freely through the world of Minecraft, endowed with all the gameplay possibilities of human players:
+the agent now can wander freely through the world of Minecraft, endowed with all the gameplay possibilities of human players other than modding or cheating:
 mining, crafting, navigating, using items, etc.
 
 In addition to that, the adult agent can copulate with other adults:
 for this to be possible, the two agents need both to consent to the copulation and be physically close enough to each other.
 Also, they need both to have enough life points.
+The consent is based on the activation of a specialized output neuron:
+when it activates, it allows copulation and prevents it when it is inactive.
+For a copulation to be successful, all the mentioned requirements (physical proximity, neural activationn and enough life points) need to be sustained during a short period of time.
+More precisely, a variable is introduced with value 0 when the requirements are met simultaneously for the first time.
+When the variable reaches the value 1, the copulation is considered as done.
+This variable decreases spontaneously in the absence of the requirements, but increases when they are all met simultaneously.
+The variable is removed when it reaches the value 0 or 1.
 
-A copulation takes food and oxygen from the two agents, and leads to a birth with a probability depending of the level of fertility of the parents.
+When completed, a copulation takes food and oxygen from the two agents, and leads to a birth with a probability depending of the level of fertility of the parents.
 This level is updated after each [exam](/exams) session:
 an improvement in an agent's answers increases its level of fertility, while a decrease in performance leads to a decrease in fertility.
 If the copulation leads to a birth, one of the parents is chosen at random to host a newborn agent in prenatal stage.
