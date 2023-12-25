@@ -12,7 +12,7 @@ redirect_from:
 We want to build a general artificial intelligence, which would be able to collaborate with human researchers to help them solving or asking scientific questions.
 
 ## Basic requirements
-To achieve this goal, this clever agent needs to be able to discuss with humans, as well as sharing some human emotions like empathy or the sake for cooperation.
+To achieve this goal, this clever [agent](/agents) needs to be able to discuss with humans, as well as sharing some human emotions like empathy or the sake for cooperation.
 Thus, the agent must be familiar with cooperative social interactions and natural language.
 Also it must build intuitive core knowledge about physics of our world, as this intuition is crucial to researchers to tackle difficult problems.
 
