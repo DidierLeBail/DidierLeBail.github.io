@@ -32,8 +32,8 @@ The genetic operators like cross-over or mutations are applied to the genotype.
 To evaluate how efficient a genotype is, we need first to compute its phenotype and then immerse it into an environment.
 In particular, at environment fixed, two genotypes outputting the same phenotype will have the same fitness value.
 It is thus important that every phenotype is equally likely in the genotype space:
-the inverse image of the map genotype to phenotype should have a cardinal similar for every phenotype.
-If phenotypes are much unbalanced, the evolution process would have a hard time finding a genotype that produces a not-dominant phenotype.
+the inverse image of the map genotype to phenotype should have a similar cardinal for every phenotype.
+If phenotypes were much unbalanced, the evolution process would have a hard time finding a genotype that produces a not-dominant phenotype.
 But here is the point: we have no way to know _a priori_ whether or not every phenotype is equally likely, or even better, whether interesting phenotypes are more likely.
 
 Taking a step back, we have a bunch of parameters (genotype) that we input to a program (decoding process) to obtain another bunch of parameters (phenotype).
@@ -53,7 +53,7 @@ In a general setting, you might try hierarchical search:
 you start with large steps in your space, eventually dismissing large regions of it, then exploring with finer steps the remaining regions.
 However, this works only if the impression you had with large steps confirms with the smaller steps:
 it could be that the solution is located in one of the large regions you have dismissed at first!
-Being able to step back is thus crucial if you want our search to be effective:
+Being able to step back is thus crucial if you want your search to be effective:
 diversity should be boosted as soon as all individuals perform similarly.
 
 The second observation is the large number of steps needed to find a good solution with a direct encoding.
@@ -87,7 +87,7 @@ To perform all of this, we need a programming language.\
 
 In a generic setting, such a language can be viewed as a [context-free grammar](https://en.wikipedia.org/wiki/Context-free_grammar).
 In a nutshell, it is the data of symbols and rewriting rules of the form:\
-single symbol $&rarr;& string of symbols\
+single symbol $&rarr;$ string of symbols\
 
 Those rules can be themselves concantenated into a single string, called the chromosome describing our grammar.
 However, designing a grammar is not enough to generate a network.
@@ -97,16 +97,6 @@ This tree indicates which rewriting rules among the available ones in our gramma
 The syntactic tree itself is also part of the genotype, as a chromosome separated from the one encoding the grammar.
 
 PASS
-
-What is the simplest algorithm that generates a network?\
-
-### first step: simplest algorithmic generation process
-First, let us focus on the task on synthesizing the simplest kind of networks:
-undirected and unweighted.
-
-
-PASS
-
 
 ## basic epigenetics
 Information should be transmitted directly from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic transmission and decoding.
