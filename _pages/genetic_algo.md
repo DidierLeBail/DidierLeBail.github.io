@@ -77,7 +77,7 @@ Although in theory, one hidden layer is enough to interpolate any function, in p
 After training, each of these layers appears to perform a relatively simple task.\
 Hence, to be able to generate highly complex phenotypes, it might be worth to consider a sequential decoding process, with different chromosomes associated to each phase.
 
-## decoding structure suited to the generation of neural networks
+## decoding structure suited to the generation of our neural networks
 
 To generate a neural network in a sequential way, we could for example build the topology, i.e. a set of nodes and undirected edges.
 In a second phase, we differentiate neurons in the various types described in [this page](/neural_network).
@@ -102,11 +102,26 @@ Note however that using completely generic grammars is unlikely to give rise to 
 The layers whose grammar has been designed by hand are called the main layers.
 
 Before we specify the main layers, let us recap the current genotype structure.
-By analogy with Nature, it is composed of a so-called coding part, or "DNA-like part", which is sent as input to the decoding process and that we will specify later.
+One part of it is named "DNA-like part", or "coding DNA" by analogy with Nature.
+This part, that we will specify later, is sent as input to the decoding process.
 The remaining genotype codes for the decoding system, i.e. specify the step-by-step construction of a neural network out of the DNA-like part of the genotype.
-The genotype of the decoding system consists in a collection of layers $(L<sub>1</sub>,...,L<sub>n</sub>)$, where $L<sub>i</sub>$ takes the output of $L<sub>i-1</sub>$ as input for $i\geq1$.
-The first layer $L<sub>1</sub>$ takes the DNA-like genotype as input and the last layer $L<sub>n</sub>$ returns the neural network.
-For any $1\leq i\leq n$, $L<sub>i</sub>$ contains a syntactic tree if it is a main layer, and both a grammar and a syntactic tree else.
+The genotype of the decoding system consists in a collection of layers (L<sub>1</sub>,...,L<sub>n</sub>), where L<sub>i</sub> takes the output of L<sub>i-1</sub> as input for $i\geq1$.
+The first layer L<sub>1</sub> takes the DNA-like genotype as input and the last layer L<sub>n</sub> returns the neural network.
+For any $1\leq i\leq n$, L<sub>i</sub> contains a syntactic tree if it is a main layer, and both a grammar and a syntactic tree else.
+
+## design of the main layers
+Recall that the genotype is supposed to code for three structures:
+1. the initial architecture
+2. the plasticity rules at fixed architecture
+3. the rules for changing the architecture (making or removing connections between neurons, introduction or removal of neurons in the network, etc)
+
+However, for the sake of clarity, we will first consider the initial architecture as the whole phenotype that we want to synthesize.
+We will refer to this partial genotype as genotype of level 1.
+Then the genotype that we are interested in, which codes for the three structures, will be the genotype of level 3.
+
+## level 1
+
+PASS
 
 ## basic epigenetics
 Information should be transmitted directly from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic transmission and decoding.
@@ -128,17 +143,11 @@ Such a system should be composite:
 * a corrector that corrects those genotypes to avoid lethal genetic diseases
 
 
-Three aspects of our agents' neural networks are subject to genetic evolution:
-1. the initial architecture
-2. the plasticity rules at fixed architecture
-3. the rules for changing the architecture (making or removing connections between neurons, introduction or removal of neurons in the network, etc)
-
 The key aspects of our memetic algorithm are the following:
-* complexification (we start from simple phenotypes, then increasingly complex)
+* complexification (we start from simple phenotypes, then increasingly complex) the initial population of genotypes is a singleton made up with a single nucleotide (simplest genotype)
 * speciation to preserve innovations
 * Lamarckian learning and epigenetics
 * the evolution strategy is itself subject to evolution
-
 
 ## coding the architecture
 pass
