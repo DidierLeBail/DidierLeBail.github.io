@@ -104,8 +104,9 @@ The layers whose grammar has been designed by hand are called the main layers.
 Before we specify the main layers, let us recap the current genotype structure.
 By analogy with Nature, it is composed of a so-called coding part, or "DNA-like part", which is sent as input to the decoding process and that we will specify later.
 The remaining genotype codes for the decoding system, i.e. specify the step-by-step construction of a neural network out of the DNA-like part of the genotype.
-The genotype of the decoding system consists in a collection $(L)$.
-$$
+The genotype of the decoding system consists in a collection of layers $(L<sub>1</sub>,...,L<sub>n</sub>)$, where $L<sub>i</sub>$ takes the output of $L<sub>i-1</sub>$ as input for $i\geq1$.
+The first layer $L<sub>1</sub>$ takes the DNA-like genotype as input and the last layer $L<sub>n</sub>$ returns the neural network.
+For any $1\leq i\leq n$, $L<sub>i</sub>$ contains a syntactic tree if it is a main layer, and both a grammar and a syntactic tree else.
 
 ## basic epigenetics
 Information should be transmitted directly from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic transmission and decoding.
