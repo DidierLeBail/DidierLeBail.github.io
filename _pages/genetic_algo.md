@@ -104,7 +104,7 @@ The layers whose grammar has been designed by hand are called the main layers.
 Before we specify the main layers, let us recap the current genotype structure.
 By analogy with Nature, it is composed of a so-called coding part, or "DNA-like part", which is sent as input to the decoding process and that we will specify later.
 The remaining genotype codes for the decoding system, i.e. specify the step-by-step construction of a neural network out of the DNA-like part of the genotype.
-The genotype of the decoding system consists in a collection of chromosomes $()$.
+The genotype of the decoding system consists in a collection $(L)$.
 $$
 
 ## basic epigenetics
