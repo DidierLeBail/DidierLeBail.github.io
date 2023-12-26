@@ -96,7 +96,16 @@ Now we have to write an algorithm, i.e. a [syntactic tree](https://en.wikipedia.
 This tree indicates which rewriting rules among the available ones in our grammar we pick at each stage of the network generation process.
 The syntactic tree itself is also part of the genotype, as a chromosome separated from the one encoding the grammar.
 
-PASS
+Multiple grammars and trees can be stacked upon each other, the only condition being that the terminal symbols of the grammar at one layer are starting symbols for the grammar associated to the next layer.
+This way, the segmentation of the whole decoding algorithm in a succession of simpler algorithms is successfully achieved.
+Note however that using completely generic grammars is unlikely to give rise to an efficient decoding system ; the grammar of some layers must be designed by hand with care, then layers with generic grammars can be added at wish.
+The layers whose grammar has been designed by hand are called the main layers.
+
+Before we specify the main layers, let us recap the current genotype structure.
+By analogy with Nature, it is composed of a so-called coding part, or "DNA-like part", which is sent as input to the decoding process and that we will specify later.
+The remaining genotype codes for the decoding system, i.e. specify the step-by-step construction of a neural network out of the DNA-like part of the genotype.
+The genotype of the decoding system consists in a collection of chromosomes $()$.
+$$
 
 ## basic epigenetics
 Information should be transmitted directly from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic transmission and decoding.
