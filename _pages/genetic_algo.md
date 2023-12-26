@@ -83,11 +83,11 @@ To generate a neural network in a sequential way, we could for example build the
 In a second phase, we differentiate neurons in the various types described in [this page](/neural_network).
 Then we make the edges directed and add weights on them.
 In a final phase, we tune the internal parameters of the neurons and eventually correct the topology of the network.
-To perform all of this, we need a programming language.\
+To perform all of this, we need a programming language.
 
 In a generic setting, such a language can be viewed as a [context-free grammar](https://en.wikipedia.org/wiki/Context-free_grammar).
 In a nutshell, it is the data of symbols and rewriting rules of the form:\
-single symbol $&rarr;$ string of symbols\
+single symbol $&rarr;$ string of symbols
 
 Those rules can be themselves concantenated into a single string, called the chromosome describing our grammar.
 However, designing a grammar is not enough to generate a network.
