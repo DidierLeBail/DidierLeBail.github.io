@@ -45,7 +45,7 @@ External sensory types comprise neurons sensitive to light and neurons sensitive
 Internal sensory types comprise neurons sensitive to life points, neurons sensitive to oxygen points, inventory, age and food level.
 Motor types gather neurons involved in body displacement, item use, item drop, item craft, chatting, coopulating and acting on the world (mining, pushing a button, taking an object on the ground, etc).
 
-For now, we have identified 6 structural neural types to implement in our networks.
+For now, we have identified 7 structural neural types to implement in our networks.
 We think neural diversity is crucial because it allows to save computational resources, as well as reducing the total number of neurons and connections used.
 Indeed, distinct neural types perform distinct kinds of computation, as well as have distinct computational costs.
 For example, a XOR operation requires three perceptron neurons (we exclude the two input neurons) to be implemented, while only one biological neuron is enough: [12:10](https://www.youtube.com/watch?v=hmtQPrH-gC4&t=1s&ab_channel=ArtemKirsanov).
@@ -55,12 +55,13 @@ However, the neural network equivalent of the latter is 2000 faster at execution
 Thus, it would be of great use to build a map between structural types, defining $N(A&rarr;B)$ to be the minimal network made of neurons of type A that emulates a single neuron of type B.
 Then both types A and B should be considered if $N(A&rarr;B)$ has a greater computational cost than B and $N(B&rarr;A)$ has a greater computational cost than A.
 
-Here are the 6 structural types we have identified so far:
+Here are the 7 structural types we have identified so far:
 * perceptron: no internal state, deterministic activation function (sigmoid, ReLu, Heaviside, etc)
 * temporal: the output is a function of the internal state, whose change is a function of the neuron inputs. An example of such neuron is the [integrate-and-fire model](https://neuronaldynamics.epfl.ch/online/Ch1.S3.html).
 * boolean: the output is a [boolean function](https://en.wikipedia.org/wiki/Boolean_function) of the inputs
 * stochastic: the output is a random variable. The simplest example of such neuron is obtained by considering the activation function as returning a probability to fire.
 * ordered: usually, a neuron takes as input the biased aggregation of its inputs, i.e. the nunmber $b_{i}+\sum_{i}w_{i}x_{i}$. However, this aggregation is actually a pre-processing step that is part of the neuron's computation, and other pre-processing steps could be imagined. One of the simplest is to return the maximum value, i.e. the number $\max_{i}(w_{i}x_{i})$. Another possibility is to return a vector instead of a number. This allows the neuron to distinguish between its inputs, resulting in a distinct output when two inputs are swapped with another, even in the case of equal synaptic weights. One simple implementation of this is to return the vector $(w_{i}x_{i})_{i}$ after the pre-processing step.
+* rewriter: the output is the result of rewriting rules applied to the input viewed as a string of 0 and 1. Intermediate symbols can be introduced and terminal symbols are duplicate versions of the 0 and 1 (the output of this neuron is also a string of 0 and 1).
 * transitory: the neuron has a structural type other than transitory that can change according to specified rules
 
 ## Plasticity
