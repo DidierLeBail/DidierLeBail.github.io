@@ -5,9 +5,9 @@ author_profile: true
 ---
 
 The genetic algorithm we use allows the agents to become better at learning across generations.
-Since we consider a combination of genetic search and individual learning, this algorithm is called a [memetic algorithm](https://en.wikipedia.org/wiki/Memetic_algorithm).
+Since we consider a combination of genetic search and individual learning, this algorithm is qualified as a [memetic algorithm](https://en.wikipedia.org/wiki/Memetic_algorithm).
 
-What requirements must be satisfied by our memetic algorithm, in order to achieve open-ended evolution up to general intelligence?
+What requirements must be satisfied by our memetic algorithm, in order to achieve open-ended evolution all the way up to general intelligence?
 How elaborate must be the genetic algorithm?
 Is it possible that it produces intelligent individuals without having any intelligence?
 I believe that it is possible, on condition that the individuals can influence their own process of evolution.
