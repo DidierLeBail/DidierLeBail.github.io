@@ -5,7 +5,10 @@ author_profile: true
 ---
 
 Each agent has a distinct neural network.
-If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link](/esoteric_neural_network).
+In a nutshell, a neural network is the representation of a function or a program as a graph, where nodes output a function of the inputs they receive from other nodes or from an external source.
+Neurons receiving data from an external source are part of the input layer of the network, while neurons sending data to an outer receptor are part of the output layer.
+For a more involved introduction to neural networks, read [this page](https://en.wikipedia.org/wiki/Neural_network) from Wikipedia.
+<!-- If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link](/esoteric_neural_network). -->
 
 This network is characterized by three properties:
 * neural diversity
