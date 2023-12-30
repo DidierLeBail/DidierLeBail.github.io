@@ -98,6 +98,7 @@ The syntactic tree itself is also part of the genotype, as a chromosome separate
 
 Multiple grammars and trees can be stacked upon each other, the only condition being that the terminal symbols of the grammar at one layer are starting symbols for the grammar associated to the next layer.
 This way, the segmentation of the whole decoding algorithm in a succession of simpler algorithms is successfully achieved.
+Moreover, this structure can be generalized in a [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph#:~:text=A%20directed%20acyclic%20graph%20is,a%20path%20with%20zero%20edges) in place of a linear sequence of layers.
 Note however that using completely generic grammars is unlikely to give rise to an efficient decoding system ; the grammar of some layers must be designed by hand with care, then layers with generic grammars can be added at wish.
 The layers whose grammar has been designed by hand are called the main layers.
 
