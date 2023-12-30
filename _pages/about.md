@@ -47,3 +47,13 @@ This test evaluates core knowledge like intuitive Physics, basic arithmetic, spa
 Making progress from one exam session to the other increases the agent's degree of fertility, whereas making worse decreases it.
 
 Between two exam sessions, agents are free to explore their world and/or discuss with each other so that they perform better at the next session.
+
+## Philosophy
+Although no formal theory can help us significantly so far to reach user-friendly AGI, important principles have guided us and keep doing so on the long path we have taken.
+We believe these principles to be essential for an evolutionary-driven computing system to reach AGI:
+* redundancy
+* feedback loops: each process should report its outcome
+* maximal flexibility: any parameter or rule introduced should be a degree of freedom
+* maximal liability: any process should be either adaptive or checked and corrected adaptively
+* maximal diversity of computational processes
+
