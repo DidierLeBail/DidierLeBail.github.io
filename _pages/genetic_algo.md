@@ -126,10 +126,10 @@ Then the genotype that we are interested in, which codes for the four structures
 ## level 1
 The genotype of level 1 codes only for a high-level description of the initial architecture, which will be completed by local rules of evolution in the genotypes of levels 2 and 3.
 The simplest way to build a network from such a high-level description is to use one of the various available libraries specialized in the generation of complex networks.
-In our case, we will use some functions and objects from the [Python](https://www.python.org/) library [NetworkX](https://networkx.org/), thus defining a language in which algorithms can be written.
+In our case, we will use some functions and objects from the [Python](https://www.python.org/) library [NetworkX](https://networkx.org/), thus offering a language in which algorithms can be written.
 To improve the flexibility of this choice, we make the vocabulary of this language adaptive by allowing code blocks to be named as an elementary operator.
-Those code blocks are selected as sub-trees of the syntactic tree that represents the algorithm generating the network.
-They are selected, evolved and removed from the vocabulary by the genetic operators we will introduce in the mutating system section below.
+Those blocks are selected by genetic operators as sub-trees of the syntactic tree that represents the algorithm generating the network.
+Genetic operators are introduced in the mutating system section below.
 
 ## level 2
 PASS
