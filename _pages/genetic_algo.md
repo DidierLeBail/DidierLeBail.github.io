@@ -112,14 +112,15 @@ For any $1\leq i\leq n$, L<sub>i</sub> contains a syntactic tree if it is a main
 The third and last part of the genotype codes for the mutating system, i.e. specifies how to combine two genotypes with one another to yield two newborn genotypes.
 
 ## design of the main layers
-Recall that the genotype is supposed to code for three structures:
+Recall that the genotype is supposed to code for four structures:
 1. the initial architecture
 2. the plasticity rules at fixed architecture
 3. the rules for changing the architecture (making or removing connections between neurons, introduction or removal of neurons in the network, etc)
+4. the mutating system
 
 However, for the sake of clarity, we will first consider the initial architecture as the whole phenotype that we want to synthesize.
 We will refer to this partial genotype as genotype of level 1.
-Then the genotype that we are interested in, which codes for the three structures, will be the genotype of level 3.
+Then the genotype that we are interested in, which codes for the four structures, will be referred to as the genotype of level 4.
 
 ## level 1
 
@@ -135,7 +136,7 @@ A future improvement would be that some part of the brain sends also signals to 
 For example, some neurons could build a string of a limited number of characters during the life of the agent, and this string could be sent as one of the symbolic inputs to the mutating system.
 To limit errors in the string, the writing neurons should be informed back of the string content at any time of the agent's life, so that they have the possibility to correct it.
 
-## adaptive mutations
+## mutating system
 
 Another important part of a genetic algorithm is how to produce new candidates.
 For example, with random mutations, it is likely that most of the candidates will be dismissed, maybe even not viable.
