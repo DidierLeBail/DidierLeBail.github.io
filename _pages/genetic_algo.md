@@ -126,18 +126,7 @@ Then the genotype that we are interested in, which codes for the four structures
 
 PASS
 
-## basic epigenetics
-Information should be transmitted directly from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic transmission and decoding.
-To achieve this, we introduce two functional types of neurons:
-(1) ferry neurons and (2) trustee neurons.
-As the names suggest, the ferry neurons of the mother will output signals to the trustee neurons of the child during the first stage of the child's development (see the [description of the agents](/agents)).
-
-A future improvement would be that some part of the brain sends also signals to the mutating system, helping it to find promising mutations.
-For example, some neurons could build a string of a limited number of characters during the life of the agent, and this string could be sent as one of the symbolic inputs to the mutating system.
-To limit errors in the string, the writing neurons should be informed back of the string content at any time of the agent's life, so that they have the possibility to correct it.
-
 ## mutating system
-
 Another important part of a genetic algorithm is how to produce new candidates.
 For example, with random mutations, it is likely that most of the candidates will be dismissed, maybe even not viable.
 Thus it is important to go beyond random mutations, and to develop a non-trivial mutation procedure.
@@ -145,22 +134,14 @@ Such a system should be composite:
 * a generator that produces genotypes that are maximally different from every genotype ever tested
 * a corrector that corrects those genotypes to avoid lethal genetic diseases
 
+## basic epigenetics
+What we call epigenetics are feedback loops from the phenotype to the genotype.
+One loop results from sexual freedom, which allows the agents to decide by themselves which genetic combinations should constitute the next generation.
+In addition to this loop, some piece of information should be explicitly transmitted from the phenotype of the parent to the phenotype of the child, so that the initial state of the newborn neural network does not result purely from genetic decoding.
+We introduce to this end two functional types of neurons:
+(1) ferry neurons and (2) trustee neurons.
+As the names suggest, the ferry neurons of the mother will output signals to the trustee neurons of the child during the first stage of the child's development (see the [description of the agents](/agents)).
 
-The key aspects of our memetic algorithm are the following:
-* complexification (we start from simple phenotypes, then increasingly complex) the initial population of genotypes is a singleton made up with a single nucleotide (simplest genotype)
-* speciation to preserve innovations
-* Lamarckian learning and epigenetics
-* the evolution strategy is itself subject to evolution
-
-## coding the architecture
-pass
-
-## coding the plasticity rules
-pass
-
-## coding the rules for changing the architecture
-pass
-
-
-
-
+A future improvement would be that some part of the brain sends also signals to the mutating system, helping it explicitly to find promising mutations.
+For example, some neurons could build a string of a limited number of characters during the life of the agent, and this string could be sent as one of the symbolic inputs to the mutating system.
+To limit errors in the string, the editor neurons should be informed back of the string content at any time of the agent's life, so that they have the possibility to correct it.
