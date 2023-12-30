@@ -104,10 +104,12 @@ The layers whose grammar has been designed by hand are called the main layers.
 Before we specify the main layers, let us recap the current genotype structure.
 One part of it is named "DNA-like part", or "coding DNA" by analogy with Nature.
 This part, that we will specify later, is sent as input to the decoding process.
-The remaining genotype codes for the decoding system, i.e. specify the step-by-step construction of a neural network out of the DNA-like part of the genotype.
+The remaining genotype is split in two parts:
+one codes for the decoding system, i.e. specifies the step-by-step construction of a neural network out of the DNA-like part of the genotype.
 The genotype of the decoding system consists in a collection of layers (L<sub>1</sub>,...,L<sub>n</sub>), where L<sub>i</sub> takes the output of L<sub>i-1</sub> as input for $i\geq1$.
 The first layer L<sub>1</sub> takes the DNA-like genotype as input and the last layer L<sub>n</sub> returns the neural network.
 For any $1\leq i\leq n$, L<sub>i</sub> contains a syntactic tree if it is a main layer, and both a grammar and a syntactic tree else.
+The third and last part of the genotype codes for the mutating system, i.e. specifies how to combine two genotypes with one another to yield two newborn genotypes.
 
 ## design of the main layers
 Recall that the genotype is supposed to code for three structures:
