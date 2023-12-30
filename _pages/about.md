@@ -56,5 +56,5 @@ We believe these principles to be essential for an evolutionary-driven computing
 * maximal flexibility: any parameter or rule introduced should be a degree of freedom
 * maximal liability: any process should be either adaptive or checked and corrected adaptively
 * maximal diversity of computational processes
-* hierarchy, multi-stage: any complex process should be decomposed as a DAG of simpler intermediate processes
+* hierarchy, modularity: any complex process should be decomposed as a DAG of simpler intermediate processes
 
