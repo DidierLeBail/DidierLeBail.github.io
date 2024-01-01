@@ -134,6 +134,8 @@ Genetic operators are introduced in the mutating system section below.
 ## level 2
 PASS
 
+Parameter sharing, reduced numerical precision (parameters encoded on fewer bits).
+
 ## mutating system
 Another important part of a genetic algorithm is how to produce new candidates.
 For example, with random mutations, it is likely that most of the candidates will be dismissed, maybe even not viable.
