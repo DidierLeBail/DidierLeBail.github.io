@@ -52,10 +52,10 @@ It is a one-dimensional and differentiable function, which in principle makes it
 Hell no, the neural network will _always_ be wrong with an arbitrarily large error outside its training set.
 In contrast, a human can draw the same function with less precision than the model on its training set, but with a bounded error anywhere on the real axis.
 
-The number of parameters have nothing to do with the gap of performance between artificial and biological neural networks.
-C. Elegans has 302 neurons and does better than Chat GPT.
+The [number of parameters](https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons) have nothing to do with the gap of performance between artificial and biological neural networks.
+C. Elegans has 302 neurons and can navigate, escape predators, feed and copulate.
 A fruit fly has 150 000 neurons and shows signs of self-awareness.
-With less neurons that the giant current models, insects can learn, understand abstract concepts, navigate and display what it seems like a wide range of emotions, like fear, curiosity, desire or pain.
+With less neurons that giant current models, insects can learn, understand abstract concepts, navigate and display what it seems like a wide range of emotions, like fear, curiosity, optimism, hesitation, desire, pleasure, pain or pessimism.
 These emotions allow them to behave in a context-sensitive way, this context including their current inner state.
 
 Said otherwise, it seems that complex cognition does not require giant models.
@@ -63,37 +63,40 @@ Said otherwise, it seems that complex cognition does not require giant models.
 The way models are trained differ completely from the way biological brains learn.
 The latter learn by building some model of the world.
 This model is algorithmically simple, which allows it to be built from a few examples.
-More importantly, biological brains perform experiments, motivated by curiosity, to confront their models to reality and enrich them iteratively.
-When something is not explained by their model, they are able to adapt it rapidly because this model is modular.
-Often it is enough to change one module to correct their model.
-Moreover, the module to change is identified because biological brains have a high-level understanding of their own models, of how they process information and take decisions or make conclusions.
+Importantly, biological brains perform experiments, motivated by curiosity, to confront their models to reality and enrich them iteratively.
+When something is not explained by their model, they are able to adapt it rapidly because this model is modular:
+often it is enough to change one module to correct the model.
+Moreover, it is _a priori_ difficult to identify which module should be changed and how.
+Biological brains can do it because they have a high-level understanding of their own models, of how they process information, take decisions or make conclusions.
 
 A neural network has no inner understanding on how it works and their developpers do not have it either.
 This makes very difficult the task of improving the performance of a network.
 If the neural network had this understanding, training data should not be fed to it in a passive way, but the network would be able to identify the difficult examples and train harder on them.
 To develop an autonomous agent, this agent should autonomously learn.
+
 The last problem I will mention is that the performance of a network is measured as an average over a list of examples.
 Biological brains are not evaluated that way.
 Most of their decisions have irreversible consequences, and above all a biological brain is constantly subject to imminent death.
 Hence, doing well in average is of no use for a biological agent.
 What counts is to _always_ remaining above a certain threshold (the death threshold for example).
 Then a very unlikely situation, which is of no significance for a network, may be of high significance for a biological agent.
-Unlikely situations have revealed particularly useful in improving our scientific world models.
-If we paid attention only to average performance, science would probably not have made it so far.
+Such unlikely situations have revealed particularly useful in improving our scientific world models.
+If we had paid attention only to average performance, science would probably not have made it so far.
 
-My last remark will be about how many neuroscientists think that information is processed in the brain.
+My last remark will be about how some neuroscientists think that information is processed in the brain.
 A widespread opinion is that _in vivo_ neurons behave stochastically and this randomness is needed.
 Without any arguments, I will simply give my own point of view.
-Organisms with larger brains contain almost only spiking neurons, whereas smaller organisms can possess continously varying neurons.
+Organisms with larger brains contain almost only spiking neurons, whereas smaller organisms can possess neurons with continously varying output.
 So there seems to be an advantage to spiking versus continuous neurons.
-For me it is digital vs analog encoding. The former is more prone to errors, while the latter is reliable in a deterministic setting, besides allowing for symbolic computation.
+For me it is digital vs analog encoding. The latter is more prone to errors, while the former is reliable in a deterministic setting, besides allowing for symbolic computation.
 Well, in large brains, small errors become rapidly large so you should use digital encoding.
 In small devices or organisms, a small error remains small because it does not propagate much, so analog encoding is possible (and in principle more energy efficient).
 
 So to summarize my point of view on information encoding in the brain, (1) spiking neurons may be more relevant than continuous neurons to implement complex algorithms and (2) the brain is a perfectly deterministic processing machine.
 
-## What reasons do we have to believe that our approach will lead to AGI (and more details on this approach)
+## What reasons we have to believe that our approach will lead to AGI (and more details on this approach)
 
+PASS
 
 We think embodiement offers important advantages:
 * more suited to develop intuitive knowledge about physics
