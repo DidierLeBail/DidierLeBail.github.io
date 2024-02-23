@@ -61,7 +61,7 @@ These emotions allow them to behave in a context-sensitive way, this context inc
 Said otherwise, it seems that complex cognition does not require giant models.
 
 The way models are trained differ completely from the way biological brains learn.
-The latter learn by building some model of the world.
+The latter learn by building some model of the world via active exploration.
 This model is algorithmically simple, which allows it to be built from a few examples.
 Importantly, biological brains perform experiments, motivated by curiosity, to confront their models to reality and enrich them iteratively.
 When something is not explained by their model, they are able to adapt it rapidly because this model is modular:
