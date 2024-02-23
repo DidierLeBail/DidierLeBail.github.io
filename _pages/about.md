@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 ## Final goal
-We want to build an Artificial General Intelligence (AGI), which would be able to collaborate with human researchers to help them solving or asking scientific questions.
+We want to build a user-friendly Artificial General Intelligence (AGI), which would be able to collaborate with human researchers to help them solving or asking scientific questions.
 
 ## Basic requirements
 To achieve this goal, this clever [agent](/agents) needs to be able to discuss with humans, as well as sharing some human emotions like empathy for the sake of cooperation.
@@ -96,26 +96,62 @@ So to summarize my point of view on information encoding in the brain, (1) spiki
 
 ## What reasons we have to believe that our approach will lead to AGI (and more details on this approach)
 
-PASS
+The first point is that we do not know any cost function whose minimization would lead to AGI.
+However, we know something about the evolutive context in which AGI has emerged and developped.
+Hence a genetic algorithm seems to be a good start.
+The second point is that we want agents that develop social cooperation and communication.
+We think that cooperation is essential to trigger the emergence of intelligence, because it requires explaining to someone else our own intentions, which favors concise high-level descriptions.
+Moreover, you need to understand and integrate the intentions of multiple agents, which favors the development of a theory of the mind.
+The simplest solution is to embody these agents in a common environment, and allowing them to communicate with each other, in our case via the built-in chat of Minecraft.
 
-We think embodiement offers important advantages:
+Embodiement alone offers important advantages:
 * more suited to develop intuitive knowledge about physics
-* data have only a few types: sensory (auditive, visual, etc) or motor ; then the same agent can handle any problem immersed in the same world. This is in contrast with non-embodied algorithms, which are wired to receive only numbers or images as input: depending on the problem, their input and output layers need to be re-defined.
+* data have only a few types: sensory (auditive, visual, etc) or motor ; then the same agent can handle any problem immersed in the same world. This is in contrast with non-embodied algorithms, which are wired to receive only numbers or images as input: depending on the problem, their input and output layers need to be re-defined
 * active learning: agents are able to act on the world to design experiences in order to discriminate between models of their world
+* irreversibility: agents can die, which let them to prefer reliable generic models rather than high-performing but narrow and unpredictable models.
+
+The third point is that we do not know what kind of computing system is more suitable to implement AGI, so we consider neural networks and plasticity mechanisms as generic as possible.
+The fourth point is that AGI is probably implemented by an object of very high [algorithmic complexity](https://en.wikipedia.org/wiki/Kolmogorov_complexity).
+It turns out that in most current genetic algorithms, the complexity of the objects produced is doomed to remain below a given value.
+This is in sharp contrast with natural evolution, which seems to be open-ended, i.e. without any upper bound on the complexity of the objects it produces.
+To achieve this, a feedback loop must exist from the agents to their selection process.
+In practice, our evolution process has two main features:
+* agents choose by themselves their mating partners
+* the behaviour of each agent is monitored and evaluated according to a novelty metric. The more different an agent behaves with respect to all the agents that have ever existed in the past, the higher its fertility, meaning that a copulation will be more likely to give rise to descendents.
+
+Let us justify these choices one by one.
+Why this bias towards novelty? What is the relation with AGI?
+
+Well, we have no formal definition of cleverness.
+But a fact that seems recurrent in people usually considered as clever is that we find new ways of seeing the same things.
+We discover something new, that makes it easier to discover other things.
+Said otherwise, we are headed toward novelty, and as a consequence we reward more the things that allow for more novelty in the future, whereas dead ends are generally discarded.
+
+Another point is that doing something that has never been done is highly non-trivial, but there are still plenty of directions to do so.
+Said otherwise, it is unlikely to get stuck in a local optimum if you just try to discover novel things.
+
+Now, how to justify the autonomous choice of mating partners?
+This might be surprising indeed:
+we have just defined a metric whose maximization we believe leads to AGI, so why not ensure that the most promising agents have more descendents?
+Why wasting time waiting for our agents to randomly crawl in Minecraft before hopefully deciding to give rise to a new generation?
+
+Well, this is because we do not have such a metric.
+We do have a novelty metric, but it is far from able to grasp complex behaviours like "has invented a vehicle machine" or "has tricked another agent into doing something".
+Said otherwise, our metric alone cannot push the evolution to unbounded levels of complexity.
+So we take the gamble that agents themselves will become more efficient to recognize novelty in their fellow agents.
+Our novelty metric together with autonomous partner choice are here to train agents of early generations to recognize novelty as a favorable trait.
+Once this is done, the bias towards novelty becomes self-sustained and we would not need anymore an external metric, on condition that greater novelty implies greater cognitive abilities.
+
+In a nutshell, this is why we believe in our approach.
+If it reveals insufficient, we also have another proposal (visit the complete website to discover it ;).
 
 
-Agents can discuss by posting strings of characters on the chat.
-There is no restriction on these characters or the length of the strings.
+## A bit of technical details
 
 Inputs to the neural network include visual RGB images and 3D auditive signal, as well as life points, oxygen points, inventory, age and food level.
 Motor commands include body displacement, item use, drop and craft, acting on the world, chatting and coopulating.
 
 The population of agents is evolved through a [genetic algorithm](/genetic_algo).
-Indeed, a gradient-based approach is impossible for three reasons:
-* no cost function is known, whose minimization would imply general intelligence
-* the neural networks we consider contain loops
-* we include non-differentiable neurons in our network (although it may be possible to get differentiability back by considering each neuron as a continuous mixture of available types: the cost function should be differentiable with respect to the mixture coefficients)
-Moreover, a gradient-based approach demands more computational resources than a genetic algorithm (claim to check actually) as the dimension of the search space grows to infinity, which is clearly the case if we allow neural diversity, variable architecture and variable learning rules.
 
 Agents are free to copulate (pairwise copulation) whenever they want to, on condition that they are close enough from each other.
 Copulating takes resources (food level) and if both agents do not have the required resources, the copulation does not lead to any birth.
@@ -126,14 +162,3 @@ This test evaluates core knowledge like intuitive Physics, basic arithmetic, spa
 Making progress from one exam session to the other increases the agent's degree of fertility, whereas making worse decreases it.
 
 Between two exam sessions, agents are free to explore their world and/or discuss with each other so that they perform better at the next session.
-
-## Philosophy
-Although no formal theory can help us significantly so far to reach user-friendly AGI, important principles have guided us and keep doing so on the long path we have taken.
-We believe these principles to be essential for an evolutionary-driven computing system to reach AGI:
-* redundancy
-* feedback loops: each process should report its outcome
-* maximal flexibility: any parameter or rule introduced should be a degree of freedom
-* maximal liability: any process should be either adaptive or checked and corrected adaptively
-* maximal diversity of computational processes
-* hierarchy, modularity: any complex process should be decomposed as a DAG of simpler intermediate processes
-
