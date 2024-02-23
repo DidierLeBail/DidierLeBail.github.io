@@ -80,7 +80,7 @@ Most of their decisions have irreversible consequences, and above all a biologic
 Hence, doing well in average is of no use for a biological agent.
 What counts is to _always_ remaining above a certain threshold (the death threshold for example).
 Then a very unlikely situation, which is of no significance for a network, may be of high significance for a biological agent.
-Such unlikely situations have revealed particularly useful in improving our scientific world models.
+Such unlikely situations have revealed goldmines in improving our scientific world models.
 If we had paid attention only to average performance, science would probably not have made it so far.
 
 My last remark will be about how some neuroscientists think that information is processed in the brain.
