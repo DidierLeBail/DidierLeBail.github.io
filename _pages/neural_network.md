@@ -12,7 +12,7 @@ Neurons receiving data from an external source compose the input layer of the ne
 For a more involved introduction to neural networks, read [this page](https://en.wikipedia.org/wiki/Neural_network) from Wikipedia.
 <!-- If you have already read the [Wikipedia](https://en.wikipedia.org/wiki/Neural_network) page about neural networks, or are familiar with the concept, and still asking yourself what a neural network is in a more abstract language, you might slip over to this [link](/esoteric_neural_network). -->
 
-Although in theory, any kind of computation would be possible at the nodes of a neural network, in almost every use case, these computations take the form of arithmetic operations on real numbers.
+Although in theory, any kind of computation is possible at the nodes of a neural network, in almost every use case, these computations take the form of arithmetic operations on real numbers.
 This may be seen as a limitation, but in practice it often enables differentiability of the network, i.e. tracing back the parameters responsible for a lack of performance and updating them.
 However, since we made the choice of a non-differentiable computing system, restricting ourselves to arithmetic operations is not a strong requirement anymore.
 Indeed, building a computing system based on arithmetic operations only may require a huge number of parameters to obtain some functions like long-term memory, the ability to perform mental computations, etc.
