@@ -10,6 +10,8 @@ Then four answers are presented to the agent.
 Only one is the correct answer.
 It is also shown that each answer can be selected by pushing a button.
 The agent should give his guess for the correct answer by pushing the button corresponding to his guess.
+If the agent shows progress from one exam session to the next, its level of fertility increases.
+Also, a direct feedback is returned to the agent right after each answer it gives, e.g. under the form of one sound if the answer was correct and another sound if not.
 
 During the exam session, the agent stands in a room.
 On one wall of the room are projected images or videos.
