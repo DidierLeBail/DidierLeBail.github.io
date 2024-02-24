@@ -60,6 +60,12 @@ This shrinks down the number of possible answers from four in the other tasks, t
 Another possibility is to propose the twelve boxes all mixed together.
 Then the agent should partition them in the two groups of six boxes that are expected from the secret feature.
 
+### pairing
+Some objects are presented to the agent and the goal is to match pairs of identical objects.
+For example the [concentration game](https://en.wikipedia.org/wiki/Concentration_(card_game)) falls in this category.
+We can also imagine that objects are presented one at a time, and the goal is to indicate whether the presented object has already been encountered.
+We can also imagine a search game, where an object is given and the agent has to retrieve it in a bunch of data (for example an object placed somewhere in an image, or a word placed in a dictionary, or a sound placed at some time of a soundtrack, etc).
+
 ## abstract completion
 In those tasks, the agent should infer rules that do not necessarily apply to sensory data most encountered in his environment.
 
