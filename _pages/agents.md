@@ -52,4 +52,4 @@ The variable is removed when it reaches the value 0 or 1.
 When completed, a copulation takes food and oxygen from the two agents, and leads to a birth with a probability depending of the level of fertility of the parents.
 This level is updated after each [exam](/exams) session:
 an improvement in an agent's answers increases its level of fertility, while a decrease in performance leads to a decrease in fertility.
-If the copulation leads to a birth, one of the parents is chosen at random to host a newborn agent in prenatal stage.
+A successful copulation leads to the creation of two agents in prenatal stage, each one hosted by a different parent.
