@@ -47,7 +47,7 @@ Another point, that may or not be of interest, is that biological brains are far
 Most of interesting features of biological neural networks (object recognition, decision making, mathematical reasoning) are not at all continuous as maps!
 This is why I prefer to view a biological neural network as implementing an _algorithm_ rather than a map.
 
-Another example I like to demonstrate how we are overconfident in the dominant approach to AI is to train a neural network to interpolate the cosine function.
+Another example I like, to show how we are overconfident in the dominant approach to AI is to train a neural network to interpolate the cosine function.
 It is a one-dimensional and differentiable function, which in principle makes it easy for a neural model to learn.
 Hell no, the neural network will _always_ be wrong with an arbitrarily large error outside its training set.
 In contrast, a human can draw the same function with less precision than the model on its training set, but with a bounded error anywhere on the real axis.
