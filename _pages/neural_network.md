@@ -73,14 +73,36 @@ Here are the 7 structural types we have identified so far:
 * temporal: the output is a function of the internal state, whose derivative is a function of the neuron inputs. An example of such neuron is the [integrate-and-fire model](https://neuronaldynamics.epfl.ch/online/Ch6.S1.html).
 * boolean: the output is a [boolean function](https://en.wikipedia.org/wiki/Boolean_function) of the inputs
 * stochastic: the output is a random variable. The simplest example of such neuron is obtained by considering the activation function as returning a probability to fire.
-* ordered: usually, a neuron takes as input the biased aggregation of its inputs, i.e. the nunmber $b_{i}+\sum_{i}w_{i}x_{i}$. However, this aggregation is actually a pre-processing step that is part of the neuron's computation, and other pre-processing steps could be imagined. One of the simplest is to return the maximum value, i.e. the number $\max_{i}(w_{i}x_{i})$. Another possibility is to return a vector instead of a number. This allows the neuron to distinguish between its inputs, resulting in a distinct output when two inputs are swapped with another, even in the case of equal synaptic weights. One simple implementation of this is to return the vector $(w_{i}x_{i})_{i}$ after the pre-processing step.
+* ordered: usually, a neuron takes as input the biased aggregation of its inputs, i.e. the number $b_{i}+\sum_{i}w_{i}x_{i}$. However, this aggregation is actually a pre-processing step that is part of the neuron's computation, and other pre-processing steps could be imagined. One of the simplest is to return the maximum value, i.e. the number $\max_{i}(w_{i}x_{i})$. Another possibility is to return a vector instead of a number. This allows the neuron to distinguish between its inputs, resulting in a distinct output when two inputs are swapped with another, even in the case of equal synaptic weights. One simple implementation of this is to return the vector $(w_{i}x_{i})_{i}$ after the pre-processing step.
 * rewriter: the output is the result of rewriting rules applied to the input viewed as a string of 0 and 1. Intermediate symbols can be introduced and terminal symbols are alias versions of the 0 and 1 (the output of this neuron is also a string of 0 and 1 so to avoid confusing the starting symbols 0 and 1 with the terminal symbols, we introduce aliases).
 * transitory: the neuron has a structural type other than transitory that can change according to specified rules
 
 ## Plasticity
-Plasticity is the ability of the network to change its edges in a dependent way with the stream of inputs it receives.
-It is needed for our purpose because it allows the agent to adapt to diverse environments, even though those environments were neither encountered by the agent nor by his ancestors.
+The plasticity of a computing system is its ability to adapt to perform either (1) the same task with fewer computational resources or (2) to perform a new task without forgetting its current abilities.
+In a neural network, plasticity can involve changes in _topology_, e.g. the creation/removal of new synapses or neurons, _parameters_, e.g. the modification of synaptic weights or neural parameters, or _resources_, e.g. the shut down of some brain area in order to save computational resources.
 
-In our implementation, we require _a minima_ that the architecture of the network is dynamic and that the local learning rules are modulated by some specific signals.
-This allows to freeze learning in some areas as well as boosting it in others, facilitating multi-task learning.
-This saves also computational resources by avoiding the continuous update of every parameter of the network.
+Together, these three forms of plasticity aim at saving resources so that the simulation of larger brains is viable, avoiding catastrophic forgetting by e.g. freezing parameters of some neural circuits, allocating more resources to brain areas selected depending on the context, which may allow for higher performance.
+
+### parameters
+The modification of real-valued parameters is ensured via a neuromodulated version of Hebb-like rules, taking account recent findings such as [heterosynaptic plasticity](https://en.wikipedia.org/wiki/Heterosynaptic_plasticity), [synaptic tagging and other mechanisms](https://en.wikipedia.org/wiki/Metaplasticity).
+
+Besides these, we seek to implement a context-dependent parameter sharing mechanism, which would allow to reduce the total number of parameters.
+Parameter sharing has proven efficient e.g. in convolutional neural networks, and we try here to generalize this idea so that which parameters to share is left to the brain's decision, depending on genetic factors and life-course evolution.
+
+### topology
+The guiding principle we lean on to propose an evolving topology is to avoid both over-and under-exploitation of neurons and synapses.
+Thus, frequently used neurons should develop new connections to share computational load.
+As introducing new neurons is costly, a neuron may first look around for an existing partner in under-exploited regions, in hope they become useful again.
+One possiblity to enchance the search is to restrict among neural under-exploited neural hubs (a neuron connected to many others) and their neighbours.
+If this search fails, new neurons can be added to highly activated regions, so that more resources are allocated to the regions that do most of the computations.
+
+In order to identify neural hubs or under and over-exploitation, a data base about the brain components has to be updated.
+Relevant measures include node centrality of neurons, degree, number of saturated synapses per neuron (meaning the synaptic weight has reached its maximal value), etc.
+Note that knowledge of transport networks or YouTube recommondation algorithms may be helpful in designing an efficient topology plasticity, as they face similar challenges.
+
+### resources
+In the case the brain takes too many resources, it may become inefficient at processing information.
+Then it is necessary to decrease the level of activity.
+However, doing it at random is not a good idea, as it could shut down areas that are relevant to the on-going task.
+Hence, we are trying to put in place a selective shut down process, where the choice of which neurons to shut down is either the result of modulator neurons or an heuristic implemented in imperative code.
+In either way, knowledge of distributed computing systems, brain irrigation or public power network may be critical to achieve this goal.
