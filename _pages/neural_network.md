@@ -79,30 +79,32 @@ Here are the 7 structural types we have identified so far:
 
 ## Plasticity
 The plasticity of a computing system is its ability to adapt to perform either (1) the same task with fewer computational resources or (2) to perform a new task without forgetting its current abilities.
-In a neural network, plasticity can involve changes in _topology_, e.g. the creation/removal of new synapses or neurons, _parameters_, e.g. the modification of synaptic weights or neural parameters, or _resources_, e.g. the shut down of some brain area in order to save computational resources.
+In a neural network, plasticity can involve changes in _topology_, e.g. the creation/removal of new synapses or neurons, _parameters_, e.g. the modification of synaptic weights or neural parameters, or _resources_, e.g. the shut down of some brain areas in order to save computational resources.
 
-Together, these three forms of plasticity aim at saving resources so that the simulation of larger brains is viable, avoiding catastrophic forgetting by e.g. freezing parameters of some neural circuits, allocating more resources to brain areas selected depending on the context, which may allow for higher performance.
+Together, these three forms of plasticity aim at saving resources so that the simulation of larger brains is viable, avoiding catastrophic forgetting by e.g. freezing parameters of some neural circuits, allocating more resources to brain areas that are selected depending on the context, which may allow for higher performance.
 
 ### parameters
 The modification of real-valued parameters is ensured via a neuromodulated version of Hebb-like rules, taking account recent findings such as [heterosynaptic plasticity](https://en.wikipedia.org/wiki/Heterosynaptic_plasticity), [synaptic tagging and other mechanisms](https://en.wikipedia.org/wiki/Metaplasticity).
 
-Besides these, we seek to implement a context-dependent parameter sharing mechanism, which would allow to reduce the total number of parameters.
-Parameter sharing has proven efficient e.g. in convolutional neural networks, and we try here to generalize this idea so that which parameters to share is left to the brain's decision, depending on genetic factors and life-course evolution.
+Besides these, we seek to implement a context-dependent parameter sharing mechanism, which would allow to reduce the total number of parameters in the network.
+Parameter sharing has proven efficient e.g. in convolutional neural networks, and we try here to generalize this idea so that which parameters to share would be left to the brain's decision, depending on genetic factors and life-course evolution.
 
 ### topology
-The guiding principle we lean on to propose an evolving topology is to avoid both over-and under-exploitation of neurons and synapses.
-Thus, frequently used neurons should develop new connections to share computational load.
-As introducing new neurons is costly, a neuron may first look around for an existing partner in under-exploited regions, in hope they become useful again.
-One possiblity to enchance the search is to restrict among neural under-exploited neural hubs (a neuron connected to many others) and their neighbours.
-If this search fails, new neurons can be added to highly activated regions, so that more resources are allocated to the regions that do most of the computations.
+One guiding principle we lean on to propose an evolving topology is to avoid both over- and under-exploitation of neurons and synapses.
+Thus, frequently used neurons should develop new connections to share their computational load.
+As introducing new neurons is costly, a neuron may first look around for an existing partner in under-exploited regions, in hope those become useful again.
+One possiblity to enchance the search is to restrict among under-exploited neural hubs (a neuron connected to many others) and their neighbours.
+If this search fails, new neurons can be added to overloaded regions, so that more resources are allocated to the regions that do most of the computations.
 
-In order to identify neural hubs or under and over-exploitation, a data base about the brain components has to be updated.
-Relevant measures include node centrality of neurons, degree, number of saturated synapses per neuron (meaning the synaptic weight has reached its maximal value), etc.
+In order to identify neural hubs, or under and over-exploited neurons, a data base about the brain components has to be updated.
+Relevant measures include node centrality of neurons, degree, number of saturated synapses per neuron (meaning the synaptic weight has reached its maximal value), etc.\
 Note that knowledge of transport networks or YouTube recommondation algorithms may be helpful in designing an efficient topology plasticity, as they face similar challenges.
 
 ### resources
 In the case the brain takes too many resources, it may become inefficient at processing information.
 Then it is necessary to decrease the level of activity.
 However, doing it at random is not a good idea, as it could shut down areas that are relevant to the on-going task.
-Hence, we are trying to put in place a selective shut down process, where the choice of which neurons to shut down is either the result of modulator neurons or an heuristic implemented in imperative code.
-In either way, knowledge of distributed computing systems, brain irrigation or public power network may be critical to achieve this goal.
+Hence, we are trying to put in place a selective shut down process, where the choice of which neurons to shut down is either the result of modulatory neurons or an heuristic implemented in imperative code.
+In either way, knowledge of distributed computing systems, brain irrigation, public power network and complex networks may be critical to achieve this goal.
+In particular, complex network science teaches us that shutting down the nodes of highest centrality is enough to ensure the deactivation of large parts of the network.
+Hence, global self-regulation of a large artificial brain might be possible to realize at a moderate computational cost.
