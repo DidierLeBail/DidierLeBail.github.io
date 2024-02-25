@@ -52,7 +52,7 @@ It is a one-dimensional and differentiable function, which in principle makes it
 Hell no, the neural network will _always_ be wrong with an arbitrarily large error outside its training set.
 In contrast, a human can draw the same function with less precision than the model on its training set, but with a bounded error anywhere on the real axis.
 
-The [number of parameters](https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons) have nothing to do with the gap of performance between artificial and biological neural networks.
+The [number of parameters](https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons) has nothing to do with the gap of performance between artificial and biological neural networks.
 C. Elegans has 302 neurons and can navigate, escape predators, feed and copulate.
 A fruit fly has 150 000 neurons and shows signs of self-awareness.
 With less neurons that giant current models, insects can learn, understand abstract concepts, navigate and display what it seems like a wide range of emotions, like fear, curiosity, optimism, hesitation, desire, pleasure, pain or pessimism.
