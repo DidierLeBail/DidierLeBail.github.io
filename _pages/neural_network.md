@@ -19,7 +19,7 @@ Indeed, building a computing system based on arithmetic operations only may requ
 Given we want to simulate a population of 100 agents, we pay attention to minimize the computational cost of simulating one agent.
 As a consequence, we use hybrid computing systems, parts of them consisting in a neural network and parts of them consisting in imperative code.
 For example, a calculator is part of the agent's brain. This calculator receives neural signals that are converted in instructions (let us say 1+2).
-The computation is performed by the calculator whose output (3 in our example) is converted into a time serie of 0 and 1, so that the brain can handle it.
+The computation is performed by the calculator whose output (3 in our example) is converted into a time serie of 0 and 1, so that the neural component of the brain can handle it.
 The interface between the calculator and the other components of the brain is let to evolution, both genetic and during the agent's life time.
 We use various other non-neural components to interface with an agent's brain, but let us now focus on the neural component.
 
