@@ -103,7 +103,7 @@ Note that knowledge of transport networks or YouTube recommondation algorithms m
 ### resources
 In the case the brain is taking too many resources, it may become inefficient at processing information.
 Then it is necessary to decrease the level of activity.
-However, doing it at random is not a good idea, as it could shut down areas that are relevant to the on-going task.
+However, doing so at random is not a good idea, as it could shut down areas that are relevant to the on-going task.
 Hence, we are trying to put in place a selective shut down process, where the choice of which neurons to shut down is either the result of modulatory neurons or an heuristic implemented in imperative code.
 In either way, knowledge of distributed computing systems, brain irrigation, public power network and complex networks may be critical to achieve this goal.
 In particular, complex network science teaches us that shutting down the nodes of highest centrality is enough to ensure the deactivation of large parts of the network.
