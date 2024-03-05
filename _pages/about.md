@@ -144,7 +144,6 @@ Once this is done, the bias towards novelty becomes self-sustained and we would 
 In a nutshell, this is why we believe in our approach.
 If it reveals insufficient, we also have another proposal (visit the complete website to discover it ;).
 
-
 ## A bit of technical details
 
 Inputs to the neural network include visual RGB images and 3D auditive signal, as well as life points, oxygen points, inventory, age and food level.
