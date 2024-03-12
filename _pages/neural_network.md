@@ -108,3 +108,18 @@ Hence, we are trying to put in place a selective shut down process, where the ch
 In either way, knowledge of distributed computing systems, brain irrigation, public power network and complex networks may be critical to achieve this goal.
 In particular, complex network science teaches us that shutting down the nodes of highest centrality is enough to ensure the deactivation of large parts of the network.
 Hence, global self-regulation of a large artificial brain might be possible to realize at a moderate computational cost.
+
+## Non-neural components
+Besides an arithmetic calculator, the brains we consider comprise various non-neural components:\
+A memorizer, which has three distinct states:
+* a recording state, in which it records the string of inputs it receives (in the limit of its capacity)
+* a verbose state, in which it spits what has been stored in its memory (when everything has been spit out, it repeats from the start)
+* a sleeping state, in which it does nothing
+
+A symbolic calculator (actually a computer), which has a set of inputs and a set of outputs.
+The state of each output unit is either 1 or 0, so that the full output of the calculator is a binary string.
+The calculator has four modes:
+* computing mode: a program written as a sequence of rewriting rules is applied to the input string to obtain the output string
+* selecting mode: the program that shall be used in the computing mode is selected among the available programs (for example, the program currently selected is replaced by the program in next position in the list of programs stored in memory)
+* programming mode: a new program is added to the list of available programs by combining the available rewriting rules or by combining programs held in memory (note that a program stored in memory can be viewed as a rewriting rule, and that a rewriting rule is a program), an existing program can also be removed or modified
+* sleeping mode: the output units are all set to 0
