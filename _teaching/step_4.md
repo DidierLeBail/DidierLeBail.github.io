@@ -8,7 +8,7 @@ date: 2025-04-16
 location: "Gottingen, Germany"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+We describe here what steps to follow in order to build an artificial brain.
 
 Heading 1
 ======
