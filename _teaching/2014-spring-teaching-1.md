@@ -1,10 +1,10 @@
 ---
-title: "Teaching experience 1"
-collection: teaching
+title: "step 4: the artificial brain"
+collection: 2025_planning
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
 venue: "University 1, Department"
-date: 2014-01-01
+date: 2025-04-16
 location: "City, Country"
 ---
 
