@@ -1,6 +1,6 @@
 ---
 title: "step 4: the artificial brain"
-collection: 2025_planning
+collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
 venue: "University 1, Department"
