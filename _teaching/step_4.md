@@ -33,6 +33,8 @@ Also, there is absolutely no black box within an artificial brain: any intermedi
 This choice is inspired from biological brains, where subthreshold fluctuations of the membrane potential are detected by neighbouring neurons and participate to important neural functions (see [this paper](https://www.mdpi.com/2076-3425/13/1/74) and [this paper](https://www.pnas.org/doi/pdf/10.1073/pnas.1716933115)).
 Aside from the relevance of this mechanism in biological brains, this choice allows the brain to access the detailed steps of each neuron, allowing it to share variables between different neurons, reuse some intermediate computations and adjust the behavior of a neuron depending on the context, including e.g. the correction of some errors.
 
+For a comparison between brains and in silico computing systems, see [this paper](https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2023.1220030/full).
+
 
 # brain
 What functional types of neurons should be implemented?
