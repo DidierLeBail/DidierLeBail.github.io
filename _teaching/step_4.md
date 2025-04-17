@@ -26,6 +26,12 @@ Lastly, a general intelligence is able to model its own behavior as well as modi
 
 These properties are not possible to implement with traditional current deep learning models, so we have to build our own: the artificial brain.
 
+An artificial brain consists in a weighted directed temporal network (with higher-order effects) of elementary computing units called neurons, rules to evolve both the network topology and the parameters of the neurons, a protocol for parasynaptic communication (i.e. communication between neurons that bypass the synaptic network) and a protocol for long-range node-to-node communication in the synaptic network (inspired from the Internet routing protocol and the blockchain algorithm).
+Note that parasynaptic communication is equivalent to assume the existence of a second parallel temporal network between neurons.
+Importantly, any parameter of an artificial brain is subject to plasticity in a context-dependent way.
+Also, there is absolutely no black box within an artificial brain: any intermediate computation within a neuron leaves an impact on the neighbouring neurons.
+This choice is inspired from biological brains, where subthreshold fluctuations of the membrane potential are detected by neighbouring neurons and participate to important neural functions (see [this paper](https://www.mdpi.com/2076-3425/13/1/74) and [this paper](https://www.pnas.org/doi/pdf/10.1073/pnas.1716933115)).
+Aside from the relevance of this mechanism in biological brains, this choice allows the brain to access the detailed steps of each neuron, allowing it to share variables between different neurons, reuse some intermediate computations and adjust the behavior of a neuron depending on the context, including e.g. the correction of some errors.
 
 
 # brain
