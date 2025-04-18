@@ -8,10 +8,13 @@ date: 2025-04-16
 location: "Gottingen, Germany"
 ---
 
-We describe here what steps to follow in order to build an artificial brain.
+We describe here what are the steps to follow in order to build an artificial brain.
+Note that we do not seek to build a brain-like computing system, which would directly emulate general intelligence.
+Instead, we seek to define a class of computing systems, such that many instances of it realize general intelligence.
+In parallel of that, in the previous and later phases (3- and 5+) we define a process that allows us to find such an instance.
 
 # goal: what we want our computing system to realize
-We want out computing system to emulate general intelligence.
+We want out computing system to have the potential to emulate general intelligence.
 To do this, it must beforehand satisfy the following prerequisites:
 - no characteristic scale in space, time or complexity (scale invariance)
 - modularity
@@ -29,18 +32,35 @@ These properties are not possible to implement with traditional current deep lea
 An artificial brain consists in a weighted directed temporal network (with higher-order effects) of elementary computing units called neurons, rules to evolve both the network topology and the parameters of the neurons, a protocol for parasynaptic communication (i.e. communication between neurons that bypass the synaptic network) and a protocol for long-range node-to-node communication in the synaptic network (inspired from the Internet routing protocol and the blockchain algorithm).
 Note that parasynaptic communication is equivalent to assume the existence of a second parallel temporal network between neurons.
 Importantly, any parameter of an artificial brain is subject to plasticity in a context-dependent way.
-Also, there is absolutely no black box within an artificial brain: any intermediate computation within a neuron leaves an impact on the neighbouring neurons.
+Also, there is no black box within an artificial brain: any intermediate computation within a neuron leaves a trace on the neighbouring neurons.
 This choice is inspired from biological brains, where subthreshold fluctuations of the membrane potential are detected by neighbouring neurons and participate to important neural functions (see [this paper](https://www.mdpi.com/2076-3425/13/1/74) and [this paper](https://www.pnas.org/doi/pdf/10.1073/pnas.1716933115)).
-Aside from the relevance of this mechanism in biological brains, this choice allows the brain to access the detailed steps of each neuron, allowing it to share variables between different neurons, reuse some intermediate computations and adjust the behavior of a neuron depending on the context, including e.g. the correction of some errors.
+Aside from the relevance of this mechanism in biological brains, this choice allows our artificial brain to access the detailed steps of each neuron, making it possible to share variables between neurons, reuse some intermediate computations and adjust the behavior of a neuron depending on the context, including e.g. the correction of some errors.
 
 For a comparison between brains and in silico computing systems, see [this paper](https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2023.1220030/full).
 
+Note that we do not aim at reproducing a biologically plausible brain ; this would be completely out of the scope of modern computers.
+Indeed, the human brain possesses 86 billion neurons, each of these neurons having in average 10 000 synapses.
+Moreover, each neuron is at least as complex as a [deep artificial convolutional neural network, being e.g. to perform XOR computation within its dendritic tree alone](https://www.cell.com/neuron/pdfExtended/S0896-6273(21)00501-8).
+Besides neurons, the brain contains [as many glial cells](https://pmc.ncbi.nlm.nih.gov/articles/PMC5063692/pdf/nihms799882.pdf), which play [a direct and critical role in the brain computations](https://pmc.ncbi.nlm.nih.gov/articles/PMC2894949/pdf/rstb20090313.pdf) and are yet not understood.
+Said otherwise, it is simply impossible to simulate a biological brain, even on modern supercomputers.
+
+That is why we include as many symbolic components and imperative programming instructions as possible (e.g. the node-to-node communication protocol), which we will describe in the following.
+
+To recap, an artificial brain is a computing system satisfying the following properties:
+- a temporal directed weighted network, called the synaptic network
+- elementary computing units called neurons. Neurons of various types coexist, including symbolic processing units. The precise definition of a neuron will be given in the following.
+- another temporal network called the parasynaptic network (inspired from the hormons released in the brain)
+- every parameter is subject to context-dependent plasticity
+- no black box: computations within each neuron are available to other neurons
+- a long-range communication protocol allowing neurons from distant areas to communicate via the synaptic network
+- a module called an observer, that computes various statistics about the dynamics of the whole brain and makes these statistics available to the brain itself
+- components or modules explicitly designed for long-term storage (building upon the ideas of [neural Turing machines](https://www.researchgate.net/profile/Faramarz-Safi/publication/344617740_A_Review_on_Neural_Turing_Machine_NTM/links/602fe79da6fdcc37a83954d2/A-Review-on-Neural-Turing-Machine-NTM.pdf), [engrams](https://pmc.ncbi.nlm.nih.gov/articles/PMC9065729/) and [epigenetic storage of information](https://www.nature.com/articles/s41539-019-0048-y.pdf)).
 
 
 
 
+# still in progress
 
-Note: we do not seek to build a brain-like computing system, but to create a process able to generate such a computing system
 
 Implementing different types of neurons
 brain = sensory area + deep brain + motor area
@@ -54,7 +74,7 @@ implement synaptic propagation (neural functional roles, aggregation operators, 
 Note that synapses can be both directional (chemical) or bidirectional (electrical), also think about higher-order synapses and think about subthreshold communication between neurons
 Implement the parasynaptic propagation
 design the long-range communication between neurons (inspire from Internet node-to-node communication protocol, also inspire from blockchain)
-implement neurons with long-term memory (inspire from the paper about voltage dependent DNA fragmenting)
+implement neurons with long-term memory (inspire from the paper about )
 Implement the symbolic components of the deep brain (see notion + github: calculator, Turing tape, recorder, etc)
 Implement the observer module of the deep brain (collect info about the brain dynamics)
 implement the different forms of plasticity
