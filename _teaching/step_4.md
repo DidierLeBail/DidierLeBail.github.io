@@ -36,6 +36,37 @@ Aside from the relevance of this mechanism in biological brains, this choice all
 For a comparison between brains and in silico computing systems, see [this paper](https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2023.1220030/full).
 
 
+
+
+
+
+Note: we do not seek to build a brain-like computing system, but to create a process able to generate such a computing system
+
+Implementing different types of neurons
+brain = sensory area + deep brain + motor area
+Implement the machine learning vision module (inspire from the DeepMind paper about reinforcement learning and world model, because they know how to handle small images, taking into account every pixel)
+Implement the symbolic vision module
+implement the retroaction loop btw the sensory modules and the deep brain
+Design the motor area
+Design the text processing modules
+The deep brain:
+implement synaptic propagation (neural functional roles, aggregation operators, etc)
+Note that synapses can be both directional (chemical) or bidirectional (electrical), also think about higher-order synapses and think about subthreshold communication between neurons
+Implement the parasynaptic propagation
+design the long-range communication between neurons (inspire from Internet node-to-node communication protocol, also inspire from blockchain)
+implement neurons with long-term memory (inspire from the paper about voltage dependent DNA fragmenting)
+Implement the symbolic components of the deep brain (see notion + github: calculator, Turing tape, recorder, etc)
+Implement the observer module of the deep brain (collect info about the brain dynamics)
+implement the different forms of plasticity
+design the parameter sharing mechanisms
+see the .md files: implement the possibility for the brain to:
+stop a computation
+resume a computation
+etc
+
+
+
+
 # brain
 What functional types of neurons should be implemented?
 
