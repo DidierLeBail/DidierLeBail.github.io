@@ -137,13 +137,11 @@ We plan to implement 4 different forms of plasticity, each having complentary st
 The simplest form of plasticity is pairwise (Hebbian) plasticity.
 Let us consider A and B 2 neurons and w the weight from A to B as depicted below.
 ```mermaid
-graph LR
-    A((A)) -->|w| B((B))
+graph LR;
+    A((A)) -->|w| B((B));
 ```
 The change in w is usually a polynomial of second order in the outputs x of A and B. Besides, a coefficient eta, that depends only on A, can be modified by some modulatory neurons (not shown here). The complete expression of the change in w writes:
-$$
-\Delta w=\eta_{A}\left(\alpha_{1}x_{A}x_{B}+\alpha_{2}x_{A}+\alpha_{3}x_{B}+\alpha_{4}\right)
-$$
+$$\Delta w=\eta_{A}\left(\alpha_{1}x_{A}x_{B}+\alpha_{2}x_{A}+\alpha_{3}x_{B}+\alpha_{4}\right)$$
 
 A shortcoming of Hebbian plasticity is that it is hard to synchronize the update of a large number of synapses.
 Also, it does not allow to remove or add new neurons or synapses.
