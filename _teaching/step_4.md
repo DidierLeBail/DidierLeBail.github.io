@@ -14,13 +14,14 @@ Instead, we seek to define a class of computing systems, such that many instance
 In parallel of that, in the previous and later phases (3- and 5+) we define a process that allows us to find such an instance.
 
 # goal: what we want our computing system to realize
-We want out computing system to have the potential to emulate general intelligence.
+We want our computing system to have the potential to emulate general intelligence.
 To do this, it must beforehand satisfy the following prerequisites:
-- no characteristic scale in space, time or complexity (scale invariance)
+- no characteristic scale in space, time or complexity (scale invariance along these three axes)
 - modularity
 - generality
 - care for laziness
 - the more information it contains, the easier it absorbs new information
+- the possibility of undergoing dramatic changes: our computing system should be able to change the way it processes information, regardless the amplitude of that change (no characteristic behavior).
 
 Said otherwise, as a computing system, our artificial brain should be able to implement any algorithm, save resources to run these algorithms more efficiently and memorize an arbitrary amount of information.
 Ideally, a general intelligence will memorize everything, recognizing any pattern, able to exploit these patterns to perform any task with minimum use of resources, and able to display open-ended novelty in behavior or ideas.
@@ -54,63 +55,159 @@ To recap, an artificial brain is a computing system satisfying the following pro
 - no black box: computations within each neuron are available to other neurons
 - a long-range communication protocol allowing neurons from distant areas to communicate via the synaptic network
 - a module called an observer, that computes various statistics about the dynamics of the whole brain and makes these statistics available to the brain itself
-- components or modules explicitly designed for long-term storage (building upon the ideas of [neural Turing machines](https://www.researchgate.net/profile/Faramarz-Safi/publication/344617740_A_Review_on_Neural_Turing_Machine_NTM/links/602fe79da6fdcc37a83954d2/A-Review-on-Neural-Turing-Machine-NTM.pdf), [engrams](https://pmc.ncbi.nlm.nih.gov/articles/PMC9065729/) and [epigenetic storage of information](https://www.nature.com/articles/s41539-019-0048-y.pdf)).
+- components or modules explicitly designed for long-term storage (building upon the ideas of [neural Turing machines](https://www.researchgate.net/profile/Faramarz-Safi/publication/344617740_A_Review_on_Neural_Turing_Machine_NTM/links/602fe79da6fdcc37a83954d2/A-Review-on-Neural-Turing-Machine-NTM.pdf), [engrams](https://pmc.ncbi.nlm.nih.gov/articles/PMC9065729/) and [epigenetic storage of information](https://www.nature.com/articles/s41539-019-0048-y.pdf))
+- a way to track time
+
+Let us know detail the precise steps we will follow in order to implement the concept of artificial brain.
+
+# step 1: the input and output channels
+The first step is to precise which sensory information is sent to the brain and which motor output is sent to the world.
+In particular, the brain receives 2 types of input: visual and textual.
+Visual input consists in an integer-valued matrix while textual input consists in a sequence of pairs (agent_id:int,post:str).
+Each of these inputs is truncated by an attention window.
+For example, the visual input is actually received from a rectangular grid of fixed size.
+The brain has the possibility to move this window, so that it is possible to access the whole content of larger images.
+A similar attention window has to be implemented for textual input, unless it is 1D instead of 2D for vision.
+The last thing to be implemented in this first step is a masking module:
+For visual input, it enables the brain to ignore all the visual input but one rectangular area (which is a subset of the attention window, of course).
+(similar for textual input but 1D instead of 2D)
+This module allows the brain to focus on a subpart of the image, just as we can focus on a narrow area of our vision field.
+
+The motor output encompasses the control of the input channels, as well as whether the agent decides to post a message, and which button it activates.
+Also we should implement the possibility that the state of the output layer is also part of the input layer, so that the brain knows which action it has taken.
+However, this is not necessary, as feedback at a higher level may be enough (the brain does not need to know which exact muscles have been sollicitated to develop a model of itself).
+
+# step 2: the sensory modules
+We implement multiple parallel pathways to process the same sensory input.
+This may seem reminiscent of using multiple filters in convolutional networks but we add here important properties.
+In our context, a pathway consists in a computing system (not necessarily a neural network as well shall see), which receives its input from a router and sends its output to another router.
+Also a pathway has additional entry points that allows other modules of the brain to pilote it (modifying the computations it performs).
+
+In a first implementation, 3 such pathways will be implemented:
+- a machine learning pathway, consisting in state-of-the-art convolutional nets (but with much less parameters due to our resources constraints).
+To design this pathway, inspiration will be drawn from the input module of [DeepMind's Dreamer](https://arxiv.org/pdf/2301.04104), because it is able to process small images (our case).
+- a symbolic processing pathway, consisting in an interface to a image processing library of operators like Fourier transform, wavelet transform, rotations, etc
+- a trivial pathway, which consists in doing nothing
+
+The router that feeds the pathways is controlled by other modules in the brain, and decide to which pathway the sensory input is sent after preprocessing.
+Note that the router can send this input to multiple pathways, a single pathway or no pathway at all.
+
+The router that receives data from the pathways can choose to forward these data to other modules or resend some of these data to the router feeding the pathways for further processing.
+
+# step 3: basic symbolic components
+The parts of the brain other than the sensory or motor pathways are referred to as the deeper brain.
+This is where the most abstract computations are supposed to take place, since the deeper brain is piloting the other modules.
+Besides usual neurons, the deeper brain has access to symbolic components to perform computations.
+These components include:
+- a recorder (able to record time series of neural outputs and replay them on demand)
+- a numeric calculator (able to perform exact arithmetic operations)
+- a database-like storage (as a first implementation we consider relational databases together with SQL for manipulating them)
+- a simpler storage, closer to those used in neural Turing machines
+- a programmable computer together with a programming language (gives the possibility for the brain to process time series of neural signals by using imperative algorithms rather than synaptic communication). More precisely, algorithms written in this language take the form of rewriting rules that are applied to the input sequence.
+The brain has the possibility to select the desired rewriting rules from a memory or add new rules.
+- a clock (it has no input but various outputs, each of these outputs oscillates with a fixed and different period)
+
+# step 4: the synaptic network
+This is where it becomes necessary to define what we mean by neuron.
+Indeed, this step consists in implementing various types of neurons.
+
+A neuron is a causal deterministic process taking as input a multivariate temporal series and outputting a univariate temporal series.
+It processes its input in four steps, that we have ordered in time:
+1. **input aggregation** convert the multiple signals receive from the in-neighbors of the neuron into a signal that the neuron can handle (usually these signals are aggregated into a single scalar via a weighted sum)
+2. **update the internal state** process the aggregated input (in traditional current machine learning, it is done by applying a non-linear function such as ReLU to the aggregated input. This function is called the activation function by analogy with neuroscience.)
+3. **read the output** just like the brain, the neuron has an input part, an inner part and an output part. In traditional machine learning, the output is equal to the internal state, but in neuroscience this is not the case. In any case, the output is deduced from the internal state only.
+4. **functional role** interpret the neuron output to decide what effect it has on the out-neighbors of the neuron. This fourth step is usually silenced, but can make a computing system incredibly richer than traditional neural networks. Most of the time, only two functional roles are implemented: the output layer, where the output of a neuron is interpreted e.g. as a motor command, and the basic role we expect from a neuron, where the output is interpreted as a number. Many other functional roles can be designed, for instance a modulatory role, which is known from neuroscience, or other roles like gate, router, switch, freeze, etc.
+
+The goal of this step is to implement various possibilities for each of these 4 aspects of how a neuron processes information.
+
+# step 5: the parasynaptic network and long-range communication
+The goal of this step is to implement the possibility for a neuron to communicate directly with neurons which are not its out-neighbors.
+This includes both a parasynaptic network and a communication protocol, that allows a neuron to send some signal to another specific neuron located anywhere in the brain.
+The two differ in that, that the communication protocol is one to one (one neuron talks to a single other neuron), while the parasynaptic communication is one to many (one neuron talks to a group of other neurons).
+
+One possible implementation of parasynaptic communication is to rely on conditionals, i.e. a given neuron should transmit to any neuron satisying some condition.
+For instance, we could imagine an inhibitory neuron that transmits to any neuron displaying an activity overload.
+
+# step 6: plasticity
+Earlier forms of communication (synaptic and parasynaptic) alter directly the state of the neurons, but not how they connect to each other.
+Plasticity allows to alter these connections, or how these connections evolve.
+We plan to implement 4 different forms of plasticity, each having complentary strengths and weaknesses.
+
+## pairwise plasticity
+The simplest form of plasticity is pairwise (Hebbian) plasticity.
+Let us consider A and B 2 neurons and w the weight from A to B as depicted below.
+```mermaid
+graph LR
+    A((A)) -->|w| B((B))
+```
+The change in w is usually a polynomial of second order in the outputs x of A and B. Besides, a coefficient eta, that depends only on A, can be modified by some modulatory neurons (not shown here). The complete expression of the change in w writes:
+$$
+\Delta w=\eta_{A}\left(\alpha_{1}x_{A}x_{B}+\alpha_{2}x_{A}+\alpha_{3}x_{B}+\alpha_{4}\right)
+$$
+
+A shortcoming of Hebbian plasticity is that it is hard to synchronize the update of a large number of synapses.
+Also, it does not allow to remove or add new neurons or synapses.
+To solve this, other forms of plasticity are required.
+
+## conditional plasticity
+It is more suitable to remove or add synapses and neurons.
+It consists in applying some change to every component of the brain satisfying some condition.
+For example, such a rule could be “duplicate any overloaded neuron”.
+For this statement to be well-defined, many statistics should be computed about the brain dynamics.
+These include the description of the structural role of a neuron (e.g. is it located at the border between 2 communities, where the notion of community is inherited from graph theory), as well as measures of the impact of a given synapse on the rest of the brain.
+Then, rules such as “remove synapse that has no impact” would be well-defined.
+
+## graph rewriting
+Contrary to the previous forms of plasticity, this form has no direct impact on the way info is processed in the brain (it does not alter the brain output).
+In the realm of imperative programming, this plasticity would be called refactoring:
+it does not alter the outcome of the modified algorithm, but reveals useful in the end.
+The main benefit of graph rewriting is the savings of resources: reduce the current brain to a smaller “equivalent” one (be cautious to the quotes here haha).
+
+In its most basic form, graph rewriting would consist in the following:
+- specify some subgraphs that should be overwritten and precise by which graph the subgraph S should be replaced: S—>T
+- to apply the rule S—>T to a network, we browse this network and every time we recognize S, we replace it by T.
+
+This basic formulation is hopeless in our case, since we have weighted networks.
+Thus, we may need an infinite number of rules to cover all the possible values for the synapses in S.
+To solve this, we restrict S and T to be unweighted networks. Then, when we browse our artificial brain, we actually recognize weighted instances of S and not S itself.
+Let us consider one such version S’: it has the same synapses as S, except they are weighted in S’ and binary in S.
+The plastic step is done by replacing S’ with a weighted network T’ such as (1) T’ is a weighted version of T, where S—>T, and (2) the weights of T’ are chosen such as T’ and S’ have the most similar mapping from input to output.
+
+## parameter sharing
+Just like graph rewriting, this form of plasticity will not alter directly the brain output.
+However, contrary to graph rewriting, it will not even alter directly the synaptic network.
+Parameter sharing only consists in binding or unbinding parameters together.
+By parameter, we mean e.g. the weight of a synapse but it can also be the multiplicative factor $\eta$ or the coefficient $\alpha$ we saw in the context of Hebbian plasticity.
+It can also be the internal parameter of a neuron.
+More generally, it is any real number appearing in the brain that is not part of a neuron output, input or internal state.
+
+By binding 2 parameters together, we mean that these parameters now share the *exact same value*.
+Let us take the example of two synapses of weights w and w’. If these synapses are unbound, w and w’ will evolve independently from each other.
+After the synapses bind together, w = w’ is enforced as long as the binding holds.
+This binding can occur e.g. if we notice that w and w’ have had a similar evolution for some time. The idea behind this is “help the spontaneous dynamics achieve its goals”.
+Then, if 2 parameters stay similar consistently when unbound, we bind them together.
+This allows the brain to stop spending resources just to make these parameters alike, and redirect these resources to other ends.
+
+Parameter sharing exists in traditional machine learning, where it has proven very efficient.
+One of its most prominent forms is the idea of convolution, implemented in convolutional neural networks.
+Here, we propose a more generic and context-dependent way of sharing parameters within a neural network.
+
+# step 7: the observer module
+This module aims at computing statistics about the brain as a whole, in particular identifying what components are the most used, what are the useless ones, etc.
+These statistics make possible global self-regulation, like avoiding epilepsy by shutting down the most central excitatory neurons, ensuring the brain operates at criticality or that it is coordinated (behaves like a whole).
+Moreover, they can guide the definition of conditionals in the context of [conditional plasticity](#conditional-plasticity).
+
+Some statistics are easy to implement:
+- distribution of neural activity across the brain
+- distribution of plasticity events across the brain
+- neuron and synapse centrality
+- avalanches of activity
+- local firing environments (for each neuron we compute the distribution of the patterns of activation of its in-neighbors). This stat allows to identify which neurons receive input with similar statistics.
+
+Other statistics are more demanding:
+- structural roles of neurons, as defined in [this paper](https://arxiv.org/pdf/2003.00056) and [this paper](https://www.researchgate.net/profile/Abdol-Hossein-Esfahanian/publication/228665526_Node_roles_and_community_structure_in_networks/links/0912f509b088580566000000/Node-roles-and-community-structure-in-networks.pdf)
+- impact of a neuron on the rest of the brain: how far an event at the level of a neuron propagates into the brain? (for example, how many changes will result from modifying a given parameter of a neuron, or removing that neuron?)
 
 
-
-
-# still in progress
-
-
-Implementing different types of neurons
-brain = sensory area + deep brain + motor area
-Implement the machine learning vision module (inspire from the DeepMind paper about reinforcement learning and world model, because they know how to handle small images, taking into account every pixel)
-Implement the symbolic vision module
-implement the retroaction loop btw the sensory modules and the deep brain
-Design the motor area
-Design the text processing modules
-The deep brain:
-implement synaptic propagation (neural functional roles, aggregation operators, etc)
-Note that synapses can be both directional (chemical) or bidirectional (electrical), also think about higher-order synapses and think about subthreshold communication between neurons
-Implement the parasynaptic propagation
-design the long-range communication between neurons (inspire from Internet node-to-node communication protocol, also inspire from blockchain)
-implement neurons with long-term memory (inspire from the paper about )
-Implement the symbolic components of the deep brain (see notion + github: calculator, Turing tape, recorder, etc)
-Implement the observer module of the deep brain (collect info about the brain dynamics)
-implement the different forms of plasticity
-design the parameter sharing mechanisms
-see the .md files: implement the possibility for the brain to:
-stop a computation
-resume a computation
-etc
-
-
-
-
-# brain
-What functional types of neurons should be implemented?
-
-## neural functional types (semantics of flowing information)
-To implement a complex algorithm, a computing system should be able to do the following:
-- stop a computation given some signal (in a neural network, it could mean shut down a group of neurons or shut down neurons along a path of activation): it is useful e.g. implement an if else statement or an assert statement
-- pause and resume a computation (given some signal)
-- add context to adapt a computation
-- keep history to eventually revert back to a previous step of the computation or recycle the results of a previous computation
-
-## use of neural circuits
-- combining already existing algorithms to produce new ones should be possible. In a neural context, this may mean that a neural circuit should be reused by others (algorithm modularity)
-- algorithms should be general, meaning that the same algorithm covers many use cases (for example an implementation of addition works for any pair of integers). In a neural context, this may mean that a neural circuit should be used in as many sensory contexts as possible
-- algorithms should be possible to modify given context. In a neural context, this may mean that plasticity should be modulated
-
-## neural functional types (semantics of flowing information)
-To implement a complex algorithm, a computing system should be able to do the following:
-- stop a computation given some signal (in a neural network, it could mean shut down a group of neurons or shut down neurons along a path of activation): it is useful e.g. implement an if else statement or an assert statement
-- pause and resume a computation (given some signal)
-- add context to adapt a computation
-- keep history to eventually revert back to a previous step of the computation or recycle the results of a previous computation
-
-## use of neural circuits
-- combining already existing algorithms to produce new ones should be possible. In a neural context, this may mean that a neural circuit should be reused by others (algorithm modularity)
-- algorithms should be general, meaning that the same algorithm covers many use cases (for example an implementation of addition works for any pair of integers). In a neural context, this may mean that a neural circuit should be used in as many sensory contexts as possible
-- algorithms should be possible to modify given context. In a neural context, this may mean that plasticity should be modulated
-
+# step 8: accessing local variables
+Implement a way that allows internal computations of a neuron to affect its neighbors.
