@@ -3,7 +3,7 @@ title: "phase 4: the artificial brain"
 collection: teaching
 type: "timeline"
 permalink: /teaching/phase_4_timeline
-venue: ""
+venue: "overview"
 date: 2025-04-16
 location: "Gottingen, Germany"
 ---

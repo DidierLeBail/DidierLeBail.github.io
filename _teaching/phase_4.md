@@ -1,9 +1,9 @@
 ---
 title: "phase 4: the artificial brain"
 collection: teaching
-type: "detailed high-level description"
+type: "motivation and description"
 permalink: /teaching/phase_4
-venue: ""
+venue: "high-level details"
 date: 2025-04-16
 location: "Gottingen, Germany"
 ---
