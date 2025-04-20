@@ -42,7 +42,7 @@ def draw_timeline(start_date,durations):
 	
 	#draw the labels of both axes
 	ax.set_xticks(x_coords)
-	ax.set_xticklabels(xlabels,rotation=45)
+	ax.set_xticklabels(xlabels,rotation=90)
 	ax.tick_params(axis='x',length=0)
 	ax.yaxis.set_visible(False)
 
