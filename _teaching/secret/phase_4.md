@@ -1,6 +1,6 @@
 ---
 title: "phase 4: the artificial brain"
-collection: secret
+collection: teaching
 type: "motivation and description"
 permalink: /teaching/phase_4
 venue: "high-level details"
