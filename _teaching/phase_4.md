@@ -1,5 +1,5 @@
 ---
-title: "phase 4: the artificial brain"
+title: "phase 4: description"
 collection: teaching
 type: "motivation and description"
 permalink: /teaching/phase_4

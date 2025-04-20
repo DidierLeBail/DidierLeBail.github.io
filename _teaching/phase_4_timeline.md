@@ -1,5 +1,5 @@
 ---
-title: "phase 4: the artificial brain"
+title: "phase 4: timeline"
 collection: teaching
 type: "timeline"
 permalink: /teaching/phase_4_timeline
