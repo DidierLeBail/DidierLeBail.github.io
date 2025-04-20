@@ -9,7 +9,7 @@ location: "Gottingen, Germany"
 ---
 
 We summarize here the estimated timeline for the realization of the phase 4, whose goal is to implement the concept of artificial brain.
-To read a motivation and a more detailed description of the intermediate steps, we refer to [this document](/_teaching/phase_4.md).
+To read a motivation and a more detailed description of the intermediate steps, we refer to [this document](/teaching/phase_4).
 Below, you will find the timeline and only a short description of each step involved.
 
 ![image](/images/phase_4_timeline.png)
