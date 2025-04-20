@@ -1,9 +1,9 @@
 ---
-title: "step 4: the artificial brain"
+title: "phase 4: the artificial brain"
 collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/step_4
-venue: "University 1, Department"
+type: "detailed high-level description"
+permalink: /teaching/phase_4
+venue: ""
 date: 2025-04-16
 location: "Gottingen, Germany"
 ---
@@ -16,10 +16,10 @@ In parallel of that, in the previous and later phases (3- and 5+) we define a pr
 # goal: what we want our computing system to realize
 We want our computing system to have the potential to emulate general intelligence.
 To do this, it must beforehand satisfy the following prerequisites:
-- no characteristic scale in space, time or complexity (scale invariance along these three axes)
-- modularity
-- generality
-- care for laziness
+- no characteristic scale in space, time or complexity (scale invariance along these three axes[^1])
+- modularity[^1]
+- generality[^1]
+- care for laziness[^1]
 - the more information it contains, the easier it absorbs new information
 - the possibility of undergoing dramatic changes: our computing system should be able to change the way it processes information, regardless the amplitude of that change (no characteristic behavior).
 
@@ -58,7 +58,7 @@ To recap, an artificial brain is a computing system satisfying the following pro
 - components or modules explicitly designed for long-term storage (building upon the ideas of [neural Turing machines](https://www.researchgate.net/profile/Faramarz-Safi/publication/344617740_A_Review_on_Neural_Turing_Machine_NTM/links/602fe79da6fdcc37a83954d2/A-Review-on-Neural-Turing-Machine-NTM.pdf), [engrams](https://pmc.ncbi.nlm.nih.gov/articles/PMC9065729/) and [epigenetic storage of information](https://www.nature.com/articles/s41539-019-0048-y.pdf))
 - a way to track time
 
-Let us know detail the precise steps we will follow in order to implement the concept of artificial brain.
+Let us now detail the precise steps we will follow in order to implement the concept of artificial brain.
 
 # step 1: the input and output channels
 The first step is to precise which sensory information is sent to the brain and which motor output is sent to the world.
@@ -67,7 +67,7 @@ Visual input consists in an integer-valued matrix while textual input consists i
 Each of these inputs is truncated by an attention window.
 For example, the visual input is actually received from a rectangular grid of fixed size.
 The brain has the possibility to move this window, so that it is possible to access the whole content of larger images.
-A similar attention window has to be implemented for textual input, unless it is 1D instead of 2D for vision.
+A similar attention window has to be implemented for textual input, except it is 1D instead of 2D for vision.
 The last thing to be implemented in this first step is a masking module:
 For visual input, it enables the brain to ignore all the visual input but one rectangular area (which is a subset of the attention window, of course).
 (similar for textual input but 1D instead of 2D)
@@ -103,8 +103,8 @@ These components include:
 - a numeric calculator (able to perform exact arithmetic operations)
 - a database-like storage (as a first implementation we consider relational databases together with SQL for manipulating them)
 - a simpler storage, closer to those used in neural Turing machines
-- a programmable computer together with a programming language (gives the possibility for the brain to process time series of neural signals by using imperative algorithms rather than synaptic communication). More precisely, algorithms written in this language take the form of rewriting rules that are applied to the input sequence.
-The brain has the possibility to select the desired rewriting rules from a memory or add new rules.
+- a simplified version of a programmable computer endowed with a programming language. More precisely, algorithms written in this language take the form of rewriting rules that are applied to the input sequence. The brain has the possibility to select the desired rewriting rules from a memory or add new rules.
+This gives the possibility to process time series of neural signals by relying on an algebra of abstract symbols rather than synaptic communication.
 - a clock (it has no input but various outputs, each of these outputs oscillates with a fixed and different period)
 
 # step 4: the synaptic network
@@ -114,18 +114,18 @@ Indeed, this step consists in implementing various types of neurons.
 A neuron is a causal deterministic process taking as input a multivariate temporal series and outputting a univariate temporal series.
 It processes its input in four steps, that we have ordered in time:
 1. **input aggregation** convert the multiple signals receive from the in-neighbors of the neuron into a signal that the neuron can handle (usually these signals are aggregated into a single scalar via a weighted sum)
-2. **update the internal state** process the aggregated input (in traditional current machine learning, it is done by applying a non-linear function such as ReLU to the aggregated input. This function is called the activation function by analogy with neuroscience.)
+2. **update the internal state** process the aggregated input (in traditional current machine learning, it is done by applying a non-linear function such as ReLU to the aggregated input)
 3. **read the output** just like the brain, the neuron has an input part, an inner part and an output part. In traditional machine learning, the output is equal to the internal state, but in neuroscience this is not the case. In any case, the output is deduced from the internal state only.
-4. **functional role** interpret the neuron output to decide what effect it has on the out-neighbors of the neuron. This fourth step is usually silenced, but can make a computing system incredibly richer than traditional neural networks. Most of the time, only two functional roles are implemented: the output layer, where the output of a neuron is interpreted e.g. as a motor command, and the basic role we expect from a neuron, where the output is interpreted as a number. Many other functional roles can be designed, for instance a modulatory role, which is known from neuroscience, or other roles like gate, router, switch, freeze, etc.
+4. **functional role** interpret the neuron output to decide what effect it has on the out-neighbors of the neuron. This fourth step is usually implicit. Most of the time, only two functional roles are implemented: the output layer, where the output of a neuron is interpreted e.g. as a motor command, and the basic role we expect from a neuron, where the output is interpreted as a number. However, many other functional roles can be designed, for instance a modulatory role, which is known from neuroscience, or other roles like gate, router, switch, freeze, etc.
 
 The goal of this step is to implement various possibilities for each of these 4 aspects of how a neuron processes information.
 
-# step 5: the parasynaptic network and long-range communication
+# step 5: beyond synaptic communication
 The goal of this step is to implement the possibility for a neuron to communicate directly with neurons which are not its out-neighbors.
 This includes both a parasynaptic network and a communication protocol, that allows a neuron to send some signal to another specific neuron located anywhere in the brain.
 The two differ in that, that the communication protocol is one to one (one neuron talks to a single other neuron), while the parasynaptic communication is one to many (one neuron talks to a group of other neurons).
 
-One possible implementation of parasynaptic communication is to rely on conditionals, i.e. a given neuron should transmit to any neuron satisying some condition.
+One possible implementation of parasynaptic communication is to rely on conditionals, i.e. a given neuron should transmit to any neuron satisfying some condition.
 For instance, we could imagine an inhibitory neuron that transmits to any neuron displaying an activity overload.
 
 # step 6: plasticity
@@ -136,10 +136,12 @@ We plan to implement 4 different forms of plasticity, each having complentary st
 ## pairwise plasticity
 The simplest form of plasticity is pairwise (Hebbian) plasticity.
 Let us consider A and B 2 neurons and w the weight from A to B as depicted below.
+
 ```mermaid
 graph LR;
     A((A)) -->|w| B((B));
 ```
+
 The change in w is usually a polynomial of second order in the outputs x of A and B. Besides, a coefficient eta, that depends only on A, can be modified by some modulatory neurons (not shown here). The complete expression of the change in w writes:
 $$\Delta w=\eta_{A}\left(\alpha_{1}x_{A}x_{B}+\alpha_{2}x_{A}+\alpha_{3}x_{B}+\alpha_{4}\right)$$
 
@@ -159,17 +161,14 @@ Then, rules such as “remove synapse that has no impact” would be well-define
 Contrary to the previous forms of plasticity, this form has no direct impact on the way info is processed in the brain (it does not alter the brain output).
 In the realm of imperative programming, this plasticity would be called refactoring:
 it does not alter the outcome of the modified algorithm, but reveals useful in the end.
-The main benefit of graph rewriting is the savings of resources: reduce the current brain to a smaller “equivalent” one (be cautious to the quotes here haha).
+The main benefit of graph rewriting is the savings of resources: it reduces the current brain to a smaller “equivalent” one (be cautious to the quotes here haha).
 
-In its most basic form, graph rewriting would consist in the following:
-- specify some subgraphs that should be overwritten and precise by which graph the subgraph S should be replaced: S—>T
-- to apply the rule S—>T to a network, we browse this network and every time we recognize S, we replace it by T.
-
-This basic formulation is hopeless in our case, since we have weighted networks.
-Thus, we may need an infinite number of rules to cover all the possible values for the synapses in S.
-To solve this, we restrict S and T to be unweighted networks. Then, when we browse our artificial brain, we actually recognize weighted instances of S and not S itself.
-Let us consider one such version S’: it has the same synapses as S, except they are weighted in S’ and binary in S.
-The plastic step is done by replacing S’ with a weighted network T’ such as (1) T’ is a weighted version of T, where S—>T, and (2) the weights of T’ are chosen such as T’ and S’ have the most similar mapping from input to output.
+In its most basic form, graph rewriting would consist in specifying some rewriting rules like e.g. S—>T.
+Here S and T denotes unweighted graphs and the rules states that S should be replaced by T.
+To apply this rule to the synaptic network, we search for the sub-graphs S' such that the unweighted version of S' is equal to S.
+Then we replace S' by T' such that:
+- T is the unweighted version of T'
+- the weights of T' are tuned in order to match the behavior of S': S' and T' should have the most similar mapping from input to output
 
 ## parameter sharing
 Just like graph rewriting, this form of plasticity will not alter directly the brain output.
@@ -209,3 +208,5 @@ Other statistics are more demanding:
 
 # step 8: accessing local variables
 Implement a way that allows internal computations of a neuron to affect its neighbors.
+
+[^1]: These points are discussed in other documents, let us know if you are interested.
