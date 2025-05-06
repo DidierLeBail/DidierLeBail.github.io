@@ -80,7 +80,7 @@ However, this is not necessary, as feedback at a higher level may be enough (the
 # step 2: the sensory modules
 We implement multiple parallel pathways to process the same sensory input.
 This may seem reminiscent of using multiple filters in convolutional networks but we add here important properties.
-In our context, a pathway consists in a computing system (not necessarily a neural network as well shall see), which receives its input from a router and sends its output to another router.
+In our context, a pathway consists in a computing system (not necessarily a neural network as we shall see), which receives its input from a router and sends its output to another router.
 Also a pathway has additional entry points that allows other modules of the brain to pilote it (modifying the computations it performs).
 
 In a first implementation, 3 such pathways will be implemented:
